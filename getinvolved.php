@@ -29,7 +29,7 @@ take part in the related <a href="http://scdb.projects.zoho.com/">Stellar Cluste
 
 <p>
 <b>Marco Castellani</b>
-<br>Mail contact: <i>m.castellani .at. oa-roma.inaf.astro.it</i>
+<br>Mail contact: <i>marco.castellani .at. oa-roma.inaf.it</i>
 
 <p>
 <a href="http://www.zohoprojects.com">
