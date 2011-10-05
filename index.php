@@ -129,6 +129,14 @@ GGCs system:
  | <a href="adsbibliogc.html">ADS search</a>
 -->
 </td></tr>
+
+<tr><td bgcolor="#EED1C1" align="center">
+<img src="new_anim.gif">
+<i>
+<a href="http://dame.dsf.unina.it/vogclusters.html">VOGCLUSTERS alpha release</a>
+</i>
+</td></tr>
+
 </table>
 <p>
 <table>
@@ -204,7 +212,7 @@ print "<a href=\"cluster_4.php?ggc=".urlencode($randglob[0])."\">".$randglob[0].
 
 <?php
 print "<a href=\"cluster_4.php?ggc=".urlencode($clday[0])."\">".$clday[0]."</a>";
-?> <img src="new_anim.gif">
+?> 
 
 </li>
 
