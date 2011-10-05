@@ -526,7 +526,7 @@ using the <a href="feedbackform.php">feedback form</a>
 <center>
 <font face="Comic Sans MS" size="-1">
 <p>Database compilation by
-<a href="http://mcastel.net63.net">
+<a href="http://mcastel.weebly.com">
 Marco Castellani</a>(<a href="http://www.oa-roma.inaf.it">
 INAF - Astronomical Observatory of Rome</a>)<p>
 <!-- img src="http://www.mporzio.astro.it/images/oarmp6.jpg" -->
