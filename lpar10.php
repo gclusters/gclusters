@@ -1,6 +1,6 @@
 <?php
 
-// definizione ESTESA dei diversi parametri...
+// definizione ESTESA dei diversi parametri, secondo l'ordine di H03
 // parametri Table 1
 $lparam[0] = 'Cluster identification number';
 $lparam[1] = 'Other commonly used cluster name';

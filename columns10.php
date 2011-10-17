@@ -1,5 +1,8 @@
 <?php
 
+// Descrizione sintetica colonne
+// Ordine parametri H10
+
 $col[0] = 'cluster';
 $col[1] = 'name';
 $col[2] = 'RA';
