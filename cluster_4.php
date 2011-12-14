@@ -8,7 +8,7 @@ $ggc= $_GET['ggc'];
 
 $ggc=trim($ggc);
 
-$query_auth = "SELECT * FROM parameters10 where ID like '$ggc' or name like '$ggc'";
+$query_auth = "SELECT * FROM parameters where ID like '$ggc' or name like '$ggc'";
 
 // extracting values ...
 
@@ -19,7 +19,7 @@ $numres = mysql_num_rows($result);
 if (!$numres)
 {
 // Non ho trovato nulla, allora allargo i criteri di ricerca...
-$query_auth = "SELECT * FROM parameters10 where ID like '%$ggc%' or name like '%$ggc%'";
+$query_auth = "SELECT * FROM parameters where ID like '%$ggc%' or name like '%$ggc%'";
 $result = mysql_query($query_auth) or die("Query failed");
 $numres = mysql_num_rows($result);
 }
