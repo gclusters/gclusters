@@ -113,7 +113,7 @@ $numpar = mysql_num_rows($res_par);
 print "\t\t<td><i>".$col[$param]."</i></td>\n";
 print "\t\t<td><i>".$linepar[$param]."</i></td>\n";
 print '<td><i><a href="http://www.physics.mcmaster.ca/Globular.html">Harris Catalogue</a></i></td>';
-print '<td><i>Revision: 2003</i></td></tr>';
+print '<td><i>Revisions: 2003/2010</i></td></tr>';
 print "</table><p>";
 
 print "<ul><li><b>".$col[$param]."</b><i> stands for </i>";
