@@ -15,7 +15,7 @@
 <p><br>
 <i>The meaning of the columns of the database is the same 
 that in the database of William E. Harris<br> 
-(values are taken from Harris 2003, we are working to import Harris 2010 data).
+(values mainly come from Harris 2003 and Harris 2010, <a href="http://goo.gl/aIxZA">details here</a>)
 <p>
 Namely, the different colums give:</i>
 &nbsp;

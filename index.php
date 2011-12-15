@@ -88,9 +88,11 @@ William E. Harris.
 </h3>
 <p>
 <h4>
-Ref.:
+Refs:
 <a href="http://cdsads.u-strasbg.fr/cgi-bin/nph-bib_query?bibcode=1996AJ....112.1487H">
-Harris, W.E. 1996, AJ, 112, 1487</a></h4>
+Harris, W.E. 1996, AJ, 112, 1487</a>, 
+<a href="http://xxx.lanl.gov/abs/1012.3224">arXiv:1012.3224</a>
+</h4>
 </i>
 </p>
 </td>
