@@ -4,7 +4,7 @@
 <img src="globular_2.gif" border="0">
 </a>
 <p><i>
-Release 11.03 ("Ommadawn")</i>
+Release 11.12 ("Hergest Ridge")</i>
 
 <p><hr><p>
 

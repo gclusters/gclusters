@@ -10,8 +10,8 @@
 <img src="globular_1.gif"><br>
 <img src="globular_2.gif"><p>
 
-<i>Release 11.03 
-"<a href="http://en.wikipedia.org/wiki/Ommadawn">Ommadawn</a>"</i>
+<i>Release 11.12 
+"<a href="http://en.wikipedia.org/wiki/Hergest_Ridge_(album)">Hergest Ridge</a>"</i>
 
 <?php
 
