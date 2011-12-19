@@ -29,8 +29,8 @@ Gclusters :: Selected bibliography
 
 <center><br>
 <b>Selected bibliography and CMDs</b>
-<p>(List of papers is also available via the <i>CiteULike</i> group 
-<a href="http://www.citeulike.org/groupfunc/13615/home">Globular Clusters</a>)
+<p>(A List of papers is also available via the <i>CiteULike</i> group 
+<a href="http://www.citeulike.org/groupfunc/6906/home">Stellar Clusters</a>)
 <p>
 <br>
 </center><hr>
