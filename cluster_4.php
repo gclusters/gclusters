@@ -547,7 +547,7 @@ echo '<tr>';
 
 echo '<td align="center" BGCOLOR="#99CCFF">';
 echo '<font face="Comic Sans MS"><b>';
-echo 'DSS image';
+echo 'Image';
 echo "</font></b></td></tr>\n";
 echo '<tr><td align="center">';
 
