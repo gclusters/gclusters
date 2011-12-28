@@ -827,7 +827,10 @@ echo "</i>";
 <br>
 <fb:like></fb:like>
 
+<g:plusone annotation="inline"></g:plusone>
+
 <?php
+include 'plus.html';
 include 'coda.html';
 ?>
 
