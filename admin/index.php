@@ -6,7 +6,10 @@
 
 
 <body bgcolor="#FF7751">
+<p>
+<center>
 NOTE: This pages are restricted to administrators of GGCs-DB
+</center>
 <p>
 <ul>
 <li>
