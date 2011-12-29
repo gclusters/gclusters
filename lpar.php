@@ -4,8 +4,8 @@
 // parametri Table 1
 $lparam[0] = 'Cluster identification number';
 $lparam[1] = 'Other commonly used cluster name';
-$lparam[2] = 'Right ascension (J2000)';
-$lparam[3] = 'Declination (J2000)';
+$lparam[2] = '<a href="http://en.wikipedia.org/wiki/Right_ascension">Right ascension</a> (J2000)';
+$lparam[3] = '<a href="http://en.wikipedia.org/wiki/Declination">Declination</a> (J2000)';
 $lparam[4] = '<a href="http://en.wikipedia.org/wiki/Galactic_coordinate_system">Galactic longitude</a> (degrees)';
 $lparam[5] = '<a href="http://en.wikipedia.org/wiki/Galactic_coordinate_system">Galactic latitude</a> (degrees)';
 $lparam[6] = 'Distance from Sun (<a href="http://en.wikipedia.org/wiki/Parsec">kiloparsecs</a>)';
@@ -19,17 +19,17 @@ $lparam[12] = 'V magnitude level of the horizontal branch (or RR Lyraes)';
 $lparam[13] = 'Apparent visual distance modulus';
 $lparam[14] = 'Integrated V magnitude of the cluster';
 $lparam[15] = 'Absolute visual magnitude (cluster luminosity)';
-$lparam[16] = 'Integrated color indices  (U-B) (uncorrected for reddening)';
-$lparam[17] = 'Integrated color indices (B-V) (uncorrected for reddening)';
-$lparam[18] = 'Integrated color indices (V-R) (uncorrected for reddening)';
-$lparam[19] = 'Integrated color indices (V-I) (uncorrected for reddening)';
+$lparam[16] = 'Integrated <a href="http://en.wikipedia.org/wiki/UBV_system">color indices (U-B)</a> (uncorrected for reddening)';
+$lparam[17] = 'Integrated <a href="http://en.wikipedia.org/wiki/UBV_system">color indices (B-V)</a> (uncorrected for reddening)';
+$lparam[18] = 'Integrated <a href="http://en.wikipedia.org/wiki/UBV_system">color indices (V-R)</a> (uncorrected for reddening)';
+$lparam[19] = 'Integrated <a href="http://en.wikipedia.org/wiki/Color_index">color indices</a> (V-I) (uncorrected for reddening)';
 $lparam[20] = 'Specific frequency of RR Lyrae variables';
 $lparam[21] = 'Horizontal-branch ratio, HBR = (B-R)/(B+V+R)';
 $lparam[22] = 'Dickens horizontal-branch morphological type';
 // parametri Table 3
-$lparam[23] = 'Metallicity [Fe/H]';
+$lparam[23] = '<a href="http://en.wikipedia.org/wiki/Metallicity">Metallicity</a> [Fe/H]';
 $lparam[24] = 'Integrated spectral type';
-$lparam[25] = 'Heliocentric radial velocity (km/s)';
+$lparam[25] = '<a href="http://rr-lyr.ast.obs-mip.fr/astropedia/article_0002.en.php">Heliocentric radial velocity</a> (km/s)';
 $lparam[26] = 'Observational (internal) uncertainty in radial velocity';
 $lparam[27] = 'Radial velocity relative to Solar local standard of rest';
 $lparam[28] = 'Central concentration, c = log(r_t/r_c)';
