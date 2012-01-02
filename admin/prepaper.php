@@ -63,7 +63,7 @@ echo $_POST[tag02];
 // ringraziamenti & chiusura...
 
 echo '<p><i>Is all of this correct?</i><p>';
-echo '<ul><li><a href="">YES! Please add my data!</a></li>';
+echo '<ul><li><a href="ipaper.php">YES! Please add my data!</a></li>';
 echo '<li><a href="">NO! Take me back now!</a></li></ul>';
   }
   else

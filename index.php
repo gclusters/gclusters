@@ -18,38 +18,39 @@
 include 'conn.php';
 
 $querylink = "SELECT * FROM linkspage ORDER BY linkdate DESC LIMIT 1";
-$result = mysql_query($querylink) or die("Query failed");
+$result = mysql_query($querylink) or die("Query A failed");
 $line = mysql_fetch_row($result);
 
 $query_biblio = "SELECT * FROM biblioclusters ORDER BY mdate DESC LIMIT 1";
-$res_biblio = mysql_query($query_biblio) or die("Query failed");
+$res_biblio = mysql_query($query_biblio) or die("Query B failed");
 $l_biblio = mysql_fetch_row($res_biblio);
 
 // aggiunte recenti ai parametri
 
 $query_npar = "SELECT cluster FROM newpar ORDER BY mdate DESC limit 20";
-$res_npar = mysql_query($query_npar) or die("Query failed");
+$res_npar = mysql_query($query_npar) or die("Query C failed");
 // $l_par = mysql_fetch_row($res_npar);
 
 // leggo le statistiche
 
 $querylink2 = "SELECT * FROM accesscount ORDER BY n_vis DESC LIMIT 7";
-$res_visited = mysql_query($querylink2) or die("Query failed");
+$res_visited = mysql_query($querylink2) or die("Query D failed");
 
 // random cluster
 
 $a=rand(0,152);
 $scelgo = "SELECT ID FROM parameters LIMIT $a,1";
-$resultr = mysql_query($scelgo) or die ("Query failed");
+$resultr = mysql_query($scelgo) or die ("Query E failed");
 $randglob = mysql_fetch_row($resultr);
 
 // cluster of the day
 
 $numax=154;
 $cldate=date('z')-70;
-$cldate2=($cldate % $numax);
+//$cldate2=($cldate % $numax); 
+$cldate2=abs($cldate % $numax); // patch for the year 2012...
 $cday = "SELECT ID FROM parameters order by R_gc LIMIT $cldate2,1";
-$rday = mysql_query($cday) or die ("Query failed");
+$rday = mysql_query($cday) or die ("Query F failed");
 $clday = mysql_fetch_row($rday);
 
 ?>
