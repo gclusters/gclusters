@@ -11,40 +11,40 @@
 <img src="globular_2.gif"><p>
 
 <i>Release 11.12 
-"<a href="http://en.wikipedia.org/wiki/Hergest_Ridge_(album)">Hergest Ridge</a>"</i>
+"<a href="http://en.wikipedia.org/wiki/Hergest_Ridge_(album)">
+Hergest Ridge</a>"</i>
 
 <?php
 
+// including parameters needed for DB connection
 include 'conn.php';
 
+// extracting most recent link
 $querylink = "SELECT * FROM linkspage ORDER BY linkdate DESC LIMIT 1";
 $result = mysql_query($querylink) or die("Query A failed");
 $line = mysql_fetch_row($result);
 
+// extracting most recent bibliographic item
 $query_biblio = "SELECT * FROM biblioclusters ORDER BY mdate DESC LIMIT 1";
 $res_biblio = mysql_query($query_biblio) or die("Query B failed");
 $l_biblio = mysql_fetch_row($res_biblio);
 
-// aggiunte recenti ai parametri
-
+// extracting most recent values for parameters
 $query_npar = "SELECT cluster FROM newpar ORDER BY mdate DESC limit 20";
 $res_npar = mysql_query($query_npar) or die("Query C failed");
 // $l_par = mysql_fetch_row($res_npar);
 
-// leggo le statistiche
-
+// reading stats
 $querylink2 = "SELECT * FROM accesscount ORDER BY n_vis DESC LIMIT 7";
 $res_visited = mysql_query($querylink2) or die("Query D failed");
 
-// random cluster
-
-$a=rand(0,152);
+// selecting a random cluster
+$a=rand(0,154);
 $scelgo = "SELECT ID FROM parameters LIMIT $a,1";
 $resultr = mysql_query($scelgo) or die ("Query E failed");
 $randglob = mysql_fetch_row($resultr);
 
-// cluster of the day
-
+// selecting the "cluster of the day"
 $numax=154;
 $cldate=date('z')-70;
 //$cldate2=($cldate % $numax); 
@@ -57,7 +57,7 @@ $clday = mysql_fetch_row($rday);
 
 <p>
 
-<!-- Version: 11.03 "Ommadawn" -->
+<!-- Version: 11.12 "Hergest Ridge" -->
 
 </center>
 <p>
@@ -114,13 +114,13 @@ Harris, W.E. 1996, AJ, 112, 1487</a>,
 <p>
 </font>
 
-<!-- TABELLA GENERALE -->
+<!-- GENERAL TABLE -->
 
 <table border=0 width=100%>
 
 <tr>
 
-<!-- TABELLA DI PROVA PIU' A SINISTRA -->
+<!-- NESTED LEFT TABLE -->
 <td valign="top">
 
 <table border=6 width=100%>
@@ -143,11 +143,13 @@ GGCs system:
 </table>
 <p>
 <table>
-<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2Fgclusters%2F123871424321591&amp;width=270&amp;colorscheme=light&amp;show_faces=true&amp;stream=true&amp;header=false&amp;height=556" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:270px; height:556px;" allowTransparency="true"></iframe>
+<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2Fgclusters%2F123871424321591&amp;width=270&amp;colorscheme=light&amp;show_faces=true&amp;stream=true&amp;header=false&amp;height=556" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:270px; height:556px;" allowTransparency="true">
+</iframe>
 </table>
 <br>
 <table><tr><td>
-<script type="text/javascript" src="http://groups.diigo.com/user_mana/link_roll_data?group_name=gclusters&icon=true&width=250&count=5&title=Links&tags=&token=" ></script><noscript><a href="http://groups.diigo.com/group/gclusters" >Links</a></noscript>
+<script type="text/javascript" src="http://groups.diigo.com/user_mana/link_roll_data?group_name=gclusters&icon=true&width=250&count=5&title=Links&tags=&token=" >
+</script><noscript><a href="http://groups.diigo.com/group/gclusters" >Links</a></noscript>
 </td></tr>
 
 <table>
@@ -163,7 +165,7 @@ Top of the page
 
 </td>
 
-<!-- START TABELLE PARTE SINISTRA -->
+<!-- BEGINNING LEFT TABLES -->
 <td width=40% valign="top">
 
 <!-- Search objects -->
@@ -224,7 +226,7 @@ print "<a href=\"cluster_4.php?ggc=".urlencode($clday[0])."\">".$clday[0]."</a>"
 
 <p>
 
-<!-- Tabella BROWSE TABLES -->
+<!-- Table BROWSE TABLES -->
 
 <table border=6 width=100%>
 <tr><td bgcolor="#EED1C1" align="center"><i><b>
@@ -260,24 +262,24 @@ A brief description of parameters listed in Tables 1,2,3</a>
 -->
 </table>
 
-<!--  Tabella Preprints  -->
+<!--  Table PREPRINTS  -->
 <table border=6 width=100%><tr>
 <td bgcolor="#FFCC99" align="center" width=100%><i><b>
 <a href="http://www.citeulike.org/group/6906">Stellar Clusters group</a></b>
 </td></tr>
 <tr><td>
 <font size="-1">
-<script src="http://feeds.feedburner.com/stellarclusters?format=sigpro" type="text/javascript" ></script><noscript>
+<script src="http://feeds.feedburner.com/stellarclusters?format=sigpro" type="text/javascript" >
+</script><noscript>
 <p>Subscribe to RSS headline updates from:
 <a href="http://feeds.feedburner.com/gpreprints"></a><br/>Powered by FeedBurner</p> </noscript>
-
-</font></td></tr>
+</font>
+</td></tr>
 
 </table>
 
 
-
-<!-- Tabella what is new -->
+<!-- Table WHAT IS NEW -->
 
 <table border=6 width=100%>
 <tr><td bgcolor="#EED1C1" align="center"><i><b>
@@ -315,22 +317,12 @@ Related <a href="papers">papers and contributions</a>
 
 </table>
 
-<!-- Fine Tabella WHATSNEW -->
-
-<!-- Fine tabella preprints  -->
-
-<!-- Tabella FEEDBACK -->
+<!-- Table FEEDBACK -->
 
 <table border=6 width=100%>
 <tr><td bgcolor="#EED1C1" align="center"><i><b>
 Users feedback</b></i>
-<!--
-<tr><td align="center"><i><font color="blue">
-Please send us any suggestion and comment<br>
-you may have concerning the GGC-DB...!</font>
-</i>
-</td></tr>
--->
+
 <tr><td align="center">
 <a href="getinvolved.php">Get involved!</a>
 :: <a href="http://mcastel.indefero.net/p/gclusters/">Developer area</a> 
@@ -353,10 +345,10 @@ A <font size="+1"><a href="feedbackform.php">feedback form</a>
 
 </td>
 
-<!-- START TABELLE PARTE DESTRA -->
+<!-- START RIGHT SECTION -->
 <td valign="top" witdh=80%>
 
-<! -- Tabella ammassi piu' visti -->
+<!-- Table MOST VISITED PAGES -->
 
 <table border=6 width=100%><tr>
 <td bgcolor="#FFCC99" align="center" width=100%><i><b>
@@ -521,8 +513,7 @@ The Globular Clusters Blog
 
 <tr><td align=center>
 <i>
-Submit a link
-using the <a href="feedbackform.php">feedback form</a>
+Submit a link using the <a href="feedbackform.php">feedback form</a>
 </i>
 </td></tr>
 
@@ -540,7 +531,6 @@ using the <a href="feedbackform.php">feedback form</a>
 <a href="http://mcastel.weebly.com">
 Marco Castellani</a>(<a href="http://www.oa-roma.inaf.it">
 INAF - Astronomical Observatory of Rome</a>)<p>
-<!-- img src="http://www.mporzio.astro.it/images/oarmp6.jpg" -->
 </font>
 This website is dedicated to the memory of Prof. Vittorio Castellani (1937-2006)
 </center>
@@ -563,7 +553,8 @@ This website is dedicated to the memory of Prof. Vittorio Castellani (1937-2006)
 
 <td>
 <a href="http://feeds.feedburner.com/gclusters">
-<img src="http://feeds.feedburner.com/~fc/gclusters?bg=99CCFF&amp;fg=444444&amp;anim=1" height="26" width="88" style="border:0" alt="" /></a>
+<img src="http://feeds.feedburner.com/~fc/gclusters?bg=99CCFF&amp;fg=444444&amp;anim=1" height="26" width="88" style="border:0" alt="" />
+</a>
 </td>
 
 </tr>
@@ -579,7 +570,8 @@ lloogg_clientid = "289102115b2cb6a2";
 <script type="text/javascript" src="http://lloogg.com/l.js?c=289102115b2cb6a2">
 </script>
 
-<script src="http://gclusters.uservoice.com/pages/general/widgets/tab.js?alignment=right&amp;color=00BCBA" type="text/javascript"></script>
+<script src="http://gclusters.uservoice.com/pages/general/widgets/tab.js?alignment=right&amp;color=00BCBA" type="text/javascript">
+</script>
 
 </body>
 </html>
