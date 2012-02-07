@@ -397,13 +397,16 @@ $ggc_temp=$rowcmd[7]; // campo "cmdiagrams" di "biblioclusters"
 
 // provo prima ad aprire direttamente l'immagine come link...
 
-// $ggc_image=$row[43]; // campo "linkimage" di "parameters"
+$ggc_image_old=$row[43]; // campo "linkimage" di "parameters"
 $ggc_image=$rowcmd[9]; // campo "linkima" di "biblioclusters"
 @ $fpweb = fopen ($ggc_image, "r");
+@ $fpweb_old = fopen ($ggc_image_old, "r");
 
 // Carico l'immagine dal link esterno...
 if($fpweb){
    echo '<img src='.$ggc_image.' width=500>';
+   } elseif ($fpweb_old) {
+   echo '<img src='.$ggc_image_old.' width=500>';
    } else {
 // Se il link esterno non va, passo a cercare all'interno...
 $ggcpre="ima/";
