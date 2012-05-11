@@ -5,6 +5,8 @@
 
 <?php include 'inte2.php'?>
 
+<h3>User's data</h3>
+<p>
 <ul>
 <li>Name: Pippo 
 <li>Institution: Osservatorio astronomico di Topolinia
