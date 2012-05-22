@@ -2,15 +2,14 @@
 <head><title>GGCs database: "adoption"</title></head>
 <body background="backgr2.jpg" vlink="#3333CC">
 
-
 <?php include 'inte2.php'?>
 
-<center><i>
-Hey! Adopting this cluster seems <b>a very good idea!</b>
-Only, give us some time to fully implement this feature :)
-</i></center>
+<p><br><p>
 
+<center>
 
+<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dE15SmxSZlRlSjhudUFHUWlfdURGY1E6MQ" width="760" height="758" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+</center>
 
 <?php include 'coda.html' ?>
 
