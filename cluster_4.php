@@ -143,6 +143,13 @@ $rowcmd = mysql_fetch_row($querycmdiagr2);
 $rownumb = mysql_num_rows($querycmdiagr2);
 
 
+// INFO ABOUT TUTORS FOR A GIVEN CLUSTER
+
+$adopt = "SELECT user.name,user.surname from user,tutors where user.ID=tutors.person
+and cluster = '$row[0]'";
+$q_adopt= mysql_query($adopt) or die ("Problems with queries in user,tutors");
+$n_adopt = mysql_num_rows($q_adopt);
+
 // ----------------------------------------------------------------------
 
 
@@ -788,6 +795,23 @@ echo "</td><tr>";
 
 ?>
 
+<!-- DISPLAYING TUTORS -->
+<tr><td><b>Adopter(s)</b> for this cluster:
+<?php
+if(!$n_adopt) 
+  {
+    echo '<i>Still nobody, <a href="adoption.php">you could be the first!</a></i>';
+  } 
+    else
+  {
+while ($r_adopt = mysql_fetch_row($q_adopt))
+{
+echo'<br>';
+echo $r_adopt[0].' '.$r_adopt[1];
+echo'<p>(See <a href="adoption.php">how to adopt</a> a cluster</a>)';
+}}
+?>
+</td></tr>
 </table>
 
 </td></tr>
