@@ -37,7 +37,7 @@ you're encouraged to choose
 clusters that still have no maintainer.
 <li>(If you don't mind) your name and institution (if applicable) will appear in the page of 
 clusters you're monitoring.
-<li>For any question, drop us an email :-)
+<li>For any question, you can go to <a href="adoption-faq.php">the adoption FAQ page</a>, or drop us an email :-)
 <p><br><p>
 
 <?php
