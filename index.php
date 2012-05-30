@@ -19,6 +19,8 @@ Hergest Ridge</a>"</i>
 // including parameters needed for DB connection
 include 'conn.php';
 
+// ******** SQL QUERIES ***************
+
 // extracting most recent link
 $querylink = "SELECT * FROM linkspage ORDER BY linkdate DESC LIMIT 1";
 $result = mysql_query($querylink) or die("Query A failed");
@@ -53,6 +55,12 @@ $cday = "SELECT ID FROM parameters order by R_gc LIMIT $cldate2,1";
 $rday = mysql_query($cday) or die ("Query F failed");
 $clday = mysql_fetch_row($rday);
 
+// extracting names of most recent tutors
+
+$que = "select name,surname from user order by joindate DESC";
+$rque = mysql_query($que) or die ("Tutor query failed");
+
+// *********** END OF SQL QUERIES **********
 ?>
 
 <p>
@@ -324,13 +332,6 @@ Related <a href="papers">papers and contributions</a>
 Users feedback</b></i>
 
 <tr><td align="center">
-<a href="getinvolved.php">Get involved!</a>
-:: <a href="http://mcastel.indefero.net/p/gclusters/">Developer area</a> 
-(<a href="http://mcastel.indefero.net/p/gclusters/timeline/all">recent updates</a>)
-
-</td></tr>
-
-<tr><td align="center">
 
 A <font size="+1"><a href="feedbackform.php">feedback form</a>
 :: <a href="http://gclusters.uservoice.com/">Discussion board</a>
@@ -441,11 +442,22 @@ while($ncont<3) {
          }
 }
 
-
 ?>
 ....
 </td></tr>
 
+<tr><td align="center"><b><i><a href="adoption.php">Tutors</a></i></b>
+</td></tr><tr><td align="center"><i>
+<?php
+while($ntut<3) {
+$mque = mysql_fetch_row($rque);
+echo $mque[0].' '.$mque[1].', ';
+$ntut=$ntut+1;
+}
+
+?>
+....
+</i></td></tr>
 </table>
 <p>
 

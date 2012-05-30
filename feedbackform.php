@@ -7,21 +7,10 @@
  
 <?php include "inte2.php" ?>
  
- 
- 
-  <H1>Contact Form</H1> 
-
-<p>Please feel free to post any suggestion for improving the database, as well as to
-report any problem you may have found in using it....</p>
-
-
-
 <p>
 
 
-
-<iframe height="450px" width="100%" name="zohoform24"  frameborder="0" scrolling="no" src="http://creator.zoho.com/showForm.do?formLinkId=24&link=true&sharedBy=mcastel&nexturl=http://venus.mporzio.astro.it/~marco/gc&borderColor=663300&headerColor=666600&showFormName=false&open=parent">
-</iframe>
+<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGZLNjhsWEFaUmVuMXhhMWdhN1pUZFE6MQ" width="760" height="400" frameborder="0" marginheight="0" marginwidth="0">Caricamento in corso...</iframe>
 
 <p>
 
