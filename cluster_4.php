@@ -796,7 +796,7 @@ echo "</td><tr>";
 ?>
 
 <!-- DISPLAYING TUTORS -->
-<tr><td><b>Adopter(s)</b> for this cluster:
+<tr><td><b>Tutor(s)</b> for this cluster:
 <?php
 if(!$n_adopt) 
   {
