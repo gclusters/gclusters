@@ -476,7 +476,9 @@ Milky Way Globular Cluster</a> at
 
 <tr><td align=center>
 <a href="http://www.univie.ac.at/webda/">
-WEBDA, A site Devoted to Stellar Clusters in the Galaxy and the Magellanic Clouds</a>
+WEBDA</a>, 
+a site devoted to Stellar Clusters
+in the Galaxy and the Magellanic Clouds
 </td></tr>
 
 <tr><td align=center>
@@ -494,6 +496,11 @@ Padova Astronomy Department</a>
 </td></tr>
 
 <tr><td align=center>
+<a href="http://www.naic.edu/~pfreire/GCpsr.html">
+Pulsars in globular clusters</a>, a compilation by Paulo Freire
+</td></tr>
+
+<tr><td align=center>
 <a href="http://dmoz.org/Science/Astronomy/Star_Clusters/Globular_Clusters/">
 Globular Clusters section</a>
 <br> in the <a href="http://dmoz.org">Open Directory
@@ -502,26 +509,19 @@ Project</a><br>
 </td></tr>
 
 <!-- SOCIAL NETWORKS -->
-<tr><td align="center">Find us on
-<a href="http://www.facebook.com/pages/gclusters/123871424321591">Facebook</a>,
-<a href="http://groups.diigo.com/group/gclusters">Diigo</a>,
-<a href="http://groups.yahoo.com/group/gclusters/">Yahoo!</a>
-<a href="http://feeds.feedburner.com/gclustersgroup" title="RSS feed" rel="alternate" type="application/rss+xml">
-<img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="border:0"/>
-
-<tr><td align="center">
-<i>CiteULike</i>  <a href="http://www.citeulike.org/groupfunc/6906/home">Stellar Clusters</a> group.
-</td></tr>
-
-<tr><td align="center">
-<a href="http://globularclusters.wordpress.com">
-The Globular Clusters Blog
-</a>
+<tr><td align="center"><i>Find us on...</i>
+<a href="http://www.facebook.com/pages/gclusters/123871424321591">Facebook</a>
+<a href="http://globularclusters.wordpress.com">Wordpress</a>
 <a href="http://feeds.feedburner.com/gclusters" title="RSS Feed" rel="alternate" type="application/rss+xml">
 <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="border:0"/>
 </a>
-
-</td></tr>
+<a href="http://www.citeulike.org/groupfunc/6906/home">CiteULike</a>
+<a href="http://www.mendeley.com/groups/530631/stellar-clusters/">Mendeley</a>
+<a href="http://www.researchgate.net/topic/Stellar_Clusters/">ResearchGate</a>
+<a href="http://groups.diigo.com/group/gclusters">Diigo</a>
+<a href="http://groups.yahoo.com/group/gclusters/">Yahoo!</a>
+<a href="http://feeds.feedburner.com/gclustersgroup" title="RSS feed" rel="alternate" type="application/rss+xml">
+<img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="border:0"/>
 
 <tr><td align=center>
 <i>
