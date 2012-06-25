@@ -501,11 +501,18 @@ Pulsars in globular clusters</a>, a compilation by Paulo Freire
 </td></tr>
 
 <tr><td align=center>
+<a href="http://www.bestedsites.com/astronomysites">
+Astronomy and Space Sites</a>, from <i>Best Education Sites</i>
+</td></tr>
+
+
+<tr><td align=center>
+
 <a href="http://dmoz.org/Science/Astronomy/Star_Clusters/Globular_Clusters/">
 Globular Clusters section</a>
-<br> in the <a href="http://dmoz.org">Open Directory
-Project</a><br>
-<img src="lizard2b.gif">
+in the <a href="http://dmoz.org">Open Directory
+Project</a>
+<img src="lizard2b.gif" width="70">
 </td></tr>
 
 <!-- SOCIAL NETWORKS -->
