@@ -5,9 +5,12 @@ include 'conn.php';
 $ggc= $_GET['ggc'];
 $ggc=trim($ggc);
 
-// Seleziono le righe (in biblioclusters) corrispondenti alla tag con il nome dell'ammasso (in bibliotags)
+// Seleziono le righe (in biblioclusters) corrispondenti alla tag 
+// con il nome dell'ammasso (in bibliotags)
 
-$query_auth = "select biblioclusters.* from biblioclusters,bibliotags where bibliotags.tag like '%$ggc%' and biblioclusters.ID=bibliotags.paper ORDER BY annoarti DESC, mdate DESC";
+$query_auth = "select biblioclusters.* from biblioclusters,bibliotags 
+where bibliotags.tag like '%$ggc%' and biblioclusters.ID=bibliotags.paper 
+ORDER BY annoarti DESC, mdate DESC";
 
 $result = mysql_query($query_auth) or die("Query failed");
 $numres = mysql_num_rows($result);
@@ -23,14 +26,13 @@ $numres = mysql_num_rows($result);
 
 if (!$numres) {
 
-echo 'GGCs database: no clusters selected';
+echo 'GGCs database: no bibliography available';
 echo "</TITLE>\n";
 
 echo "<meta name=\"Author\" content=\"Marco Castellani\">\n";
 echo "<meta name=\"Keywords\" content=\"astronomy, Milky Way, globular clusters\">\n";
 echo "</HEAD>\n";
 echo '<BODY background="backgr2.jpg" TEXT="#0000FF" LINK="#0000FF" VLINK="#A020F0" ALINK="#FF0000">';
-// echo "<BODY BGCOLOR=\"#DCDCDC\" TEXT=\"#0000FF\" LINK=\"#0000FF\" VLINK=\"#A020F0\" ALINK=\"#FF0000\">\n";
 include 'inte2.php';
 
 echo '<h1>','<i>Your query: </i>',$ggc,'</h1>';
