@@ -140,7 +140,7 @@ LIMIT 1";
 
 $querycmdiagr2 = mysql_query($querycmdiagr) or die("CMD query failed");
 $rowcmd = mysql_fetch_row($querycmdiagr2);
-$rownumb = mysql_num_rows($querycmdiagr2);
+// $rownumb = mysql_num_rows($querycmdiagr2);
 
 
 // INFO ABOUT TUTORS FOR A GIVEN CLUSTER
@@ -165,7 +165,6 @@ echo "</TITLE>\n";
 
 </HEAD>
 
-<!-- BODY background="http://www.mporzio.astro.it/cefalu2008/ima/back-012.gif" TEXT="#0000FF" LINK="#0000FF" VLINK="#A020F0" ALINK="#FF0000" -->
 <BODY background="backgr2.jpg" TEXT="#0000FF" LINK="#0000FF" VLINK="#A020F0" ALINK="#FF0000">
 
 <!-- Facebook Javascript SDK -->

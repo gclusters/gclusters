@@ -22,7 +22,7 @@ Use this form to submit a paper in the GGCs-DB
 
 <form action="prepaper.php" method="post">
 
-<table border="0" width="70%">
+<table border="1" width="70%">
 
 <tr>
 
