@@ -1,4 +1,4 @@
 <?
-$link = mysql_connect("localhost", "marco", "paperino07"); 
+$link = mysql_connect("localhost", "root", "root"); 
 mysql_select_db("globularclusters");
 ?> 
