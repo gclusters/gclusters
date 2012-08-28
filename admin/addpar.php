@@ -18,6 +18,9 @@
 <p>
 
 Use this form to submit a value of a parameter in the GGCs-DB
+<br>Please note that to use this feature you need a password, that 
+<a href="https://docs.google.com/spreadsheet/viewform?formkey=dDN6RmRncDFubXFvY1dHY3E4Yi10cXc6MQ#gid=0">
+can be obtained here</a>
 
 <p>
 
@@ -39,7 +42,7 @@ Name of the cluster:
 
 <tr>
 <td>
-Parameter code (see the list):
+Parameter code (<a href="parsim.php">see the list</a>):
 </td>
 
 <td>

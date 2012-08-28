@@ -8,14 +8,14 @@
 <?php include "inte2.php" ?>
  
 <p>
+<center>
 
+<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGZLNjhsWEFaUmVuMXhhMWdhN1pUZFE6MQ" width="770" height="670" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
-<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGZLNjhsWEFaUmVuMXhhMWdhN1pUZFE6MQ" width="760" height="400" frameborder="0" marginheight="0" marginwidth="0">Caricamento in corso...</iframe>
-
+</center>
 <p>
 
-<? include "coda.html" ?>  
-  
-  
+<?php include 'coda.html' ?>
+
   </BODY>
 </HTML>

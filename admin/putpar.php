@@ -29,10 +29,8 @@ $giorno=date("d");
 
 $datains=$anno."-".$mese."-".$giorno;
 
-echo '<p>'.$datains;
-
 $secretpass="amarok";
-echo '<p>'.$_POST[pass];
+// echo '<p>'.$_POST[pass];
 
 if($secretpass==$_POST[pass])
 
@@ -63,7 +61,6 @@ VALUES
 '$datains');
 ";
 
-echo '<p>'.$sqlstat;
 echo "<p>";
 
 // INSERISCO IL RECORD CON L'ARTICOLO
