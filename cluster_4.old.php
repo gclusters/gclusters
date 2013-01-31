@@ -6,6 +6,11 @@
 
 include 'conn.php';
 
+/*
+ * ... tanto pè cantà, perché me sento un friccico nel core...
+ * 
+ */
+
 // define queries ...
 
 $ggc= $_GET['ggc'];
@@ -441,7 +446,7 @@ if($fp_gif) {
    echo '<img src='.$ggc_gif.'>';
    } else {
 
-// estensione gi� inclusa...
+// estensione gi� inclusa...
 if($fp_new) {
    echo '<img src='.$ggc_new.'>';
    } else {
