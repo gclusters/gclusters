@@ -107,6 +107,10 @@ exit;
 
 // ------------ ESTRAZIONE DATI DA VARIE TABELLE -----------------------
 
+
+// the name of the cluster
+$mycluster=$row[0];
+
 // INTERROGAZIONE TABELLA BLOG
 $querylink_1 = "SELECT * FROM blog WHERE ID = '$row[0]'";
 $blogres = mysql_query($querylink_1) or die("Query failed");
@@ -153,7 +157,7 @@ $n_adopt = mysql_num_rows($q_adopt);
 // ----------------------------------------------------------------------
 
 
-echo 'GGCs database: globular cluster ',$row[0];
+echo 'GGCs database: globular cluster ',$mycluster;
 echo "</TITLE>\n";
 
 // echo '<link rel="alternate" type="application/rss+xml" title="'.$row[0].' tag feed" href="http://wordpress.com/tag/'.$b_row[2].'/feed/">';
@@ -266,13 +270,13 @@ if ($rnewpar) {
 $npsel = "SELECT ID FROM newpar WHERE cluster like '$row[0]' and param = $i";
 $q_npsel = mysql_query($npsel) or die ("Still problems with queries in table newpar");
 $r_npsel = mysql_num_rows($q_npsel);
-}
 
 if  ($r_npsel)
   {
    echo "<img src=\"graph/redball.gif\">";
   }
 
+}
 // fine NOTIFICA VISIVA
 
 echo '</td>';
@@ -289,9 +293,27 @@ $i++;
 
   }
 
+// ****************************************************
+// Interrogazioni DB per rimandi a bibliografia estesa
+// ****************************************************
+
+// Definisco una query tale da individuare tutte le righe dentro "biblioclusters"
+// per le quali il campo "ID" corrisponda al valore di "paper" dentro "bibliotags"
+// dove il campo "bibliotags.tag" Ã¨ il nome dell'ammasso...
+// = trovo tutti gli articoli di un dato ammasso
+
+$querybiblio = "select biblioclusters.* from biblioclusters,bibliotags 
+where bibliotags.tag='$mycluster' 
+and biblioclusters.ID=bibliotags.paper ORDER BY annoarti DESC, mdate DESC";
+
+$lresb = mysql_query($querybiblio) or die("Query \"querybiblio\" failed, please try again later");
+$lresb2 = mysql_query($querybiblio) or die("Query \"querybiblio\" failed, please try again later");
+$lresb_1 = mysql_num_rows($lresb);  // number of paper related to $mycluster
+
+
 // bibliography (if available)
 
-if  ($row[36]!="") // se il campo "autore" non e' vuoto...
+if  ($lresb_1) // if there are papers to be displayed
   {
 
 echo '<tr>';
@@ -299,25 +321,6 @@ echo '<td colspan=2 align=CENTER BGCOLOR="#66FFCC">';
 echo '<i>Color-magnitude diagrams</i>';
 echo '</td>';
 echo "</tr>\n";
-
-
-// ****************************************************
-// Interrogazioni DB per rimandi a bibliografia estesa
-// ****************************************************
-// echo '<tr>';
-// echo '<td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>';
-
-// Definisco una query tale da individuare tutte le righe dentro "biblioclusters"
-// per le quali il campo "ID" corrisponda al valore di "paper" dentro "bibliotags"
-// dove il campo "bibliotags.tag" Ã¨ il nome dell'ammasso...
-// = trovo tutti gli articoli di un dato ammasso
-
-$querybiblio = "select biblioclusters.* from biblioclusters,bibliotags where bibliotags.tag='$row[0]' and biblioclusters.ID=bibliotags.paper ORDER BY annoarti DESC, mdate DESC";
-
-$lresb = mysql_query($querybiblio) or die("Query \"querybiblio\" failed, please try again later");
-$lresb2 = mysql_query($querybiblio) or die("Query \"querybiblio\" failed, please try again later");
-$lresb_1 = mysql_num_rows($lresb);
-
 
 
 // ****************************************************
@@ -332,7 +335,6 @@ echo $col[36];
 echo '</font>';
 echo '</b></td>';
 
-
 echo '<td>';
 // autore...
 echo '<font face="Comic Sans MS">';
@@ -340,7 +342,6 @@ echo  $rowcmd[0];
 echo '</font>';
 echo '</td>';
 echo '</tr>';
-
 
 echo '<font>';
 echo '<tr>';
@@ -355,11 +356,9 @@ echo '</b></td>';
 echo '<td>';
 echo '<a href=';
 // link ADS...
-// echo $row[40];
 echo $rowcmd[3];
 echo ">";
 echo '<font face="Comic Sans MS">';
-// echo $row[37];
 echo $rowcmd[1];
 echo '</font>';
 echo '</a>';
@@ -377,13 +376,11 @@ echo '</b></td>';
 echo '<td>';
 // rivista...
 echo '<font face="Comic Sans MS">';
-// echo $row[38];
 echo $rowcmd[2];
 echo '</font>';
 echo '</td>';
 echo "</tr>\n";
   }
-
 
 // ***** CM diagram of the cluster *************
 
@@ -398,76 +395,60 @@ echo '</td>';
 // apro l'elemento di tabella che deve contenere l'immagine del CMD...
 
 echo '<td>';
-// $ggc_temp=$row[39]; // campo "link_ref" di "parameters"
 $ggc_temp=$rowcmd[7]; // campo "cmdiagrams" di "biblioclusters"
 
 // provo prima ad aprire direttamente l'immagine come link...
 
-$ggc_image_old=$row[43]; // campo "linkimage" di "parameters"
 $ggc_image=$rowcmd[9]; // campo "linkima" di "biblioclusters"
 @ $fpweb = fopen ($ggc_image, "r");
-@ $fpweb_old = fopen ($ggc_image_old, "r");
 
 // Carico l'immagine dal link esterno...
 if($fpweb){
    echo '<img src='.$ggc_image.' width=500>';
-   } elseif ($fpweb_old) {
-   echo '<img src='.$ggc_image_old.' width=500>';
-   } else {
-// Se il link esterno non va, passo a cercare all'interno...
-$ggcpre="ima/";
+   	} else {
+   $ggcpre="ima/"; // cartella immagini in locale
 
-// apro l'immagine cos“ com'e' prima di tutto...
-
-// DA FARE DA FARE
-
-/////////////////////
-
-$ggc_new=$ggcpre.$ggc_temp;
-$ggc_image=$ggcpre.$ggc_temp.".jpg";
-$ggc_png=$ggcpre.$ggc_temp.".png";
-$ggc_gif=$ggcpre.$ggc_temp.".gif";
+$ggc_new=$ggcpre.$ggc_temp;				// nothing to add
+$ggc_image=$ggcpre.$ggc_temp.".jpg";	// adding jpg
+$ggc_png=$ggcpre.$ggc_temp.".png";		// adding png
+$ggc_gif=$ggcpre.$ggc_temp.".gif";		// adding gif
 
 @ $fp_new = fopen ($ggc_new, "r");
 @ $fp = fopen ($ggc_image, "r");
 @ $fp1 = fopen ($ggc_png, "r");
 @ $fp_gif = fopen ($ggc_gif, "r");
 
-// Provo con ima in formato PNG..
-if($fp1) {
+
+
+// ...in lavorazione...
+
+if($fp1) 
+   {								
    echo '<img src='.$ggc_png.'>';
-   } else {
-
-// Provo con ima in formato GIF...
-if($fp_gif) {
-   echo '<img src='.$ggc_gif.' width=500>';
-   } else {
-
-// estensione già  inclusa...
-if($fp_new) {
+   } 
+   elseif ($fp_gif)
+   {
+    echo '<img src='.$ggc_gif.' width=500>'; 
+   }  
+   elseif ($fp_new)
+   {
    echo '<img src='.$ggc_new.'>';
-   } else {
+   }
+   elseif ($fp)
+   {
+   echo '<img src='.$ggc_image.' width=500>';
+   }
+   else
+   {
+   echo '<center><img src='.'wkonit1.gif'.'></center>';
+   }   	 
 
-// Provo con ima in formato JPG altrimenti lascio stare...
-if ($fp) {
-  echo '<img src='.$ggc_image.' width=500>';
-  } else {
-  echo '<center><img src='.'wkonit1.gif'.'></center>';
-  };
-
- };
-
-};
-};
-};
+}
 
 // ******* Fine trattazione CMD dell'ammasso ***************
 
-
-
 echo '</td>';
 echo "</tr>\n";
-
 
 // ***** DSS image of the cluster *************************
 
@@ -483,13 +464,11 @@ $dss_pref='http://archive.stsci.edu/cgi-bin/dss_search?';
 $dss_post='&e=J2000&h=8&w=8&f=GIF';
 $dss_large='&e=J2000&h=15&w=15&f=GIF';
 
-$ggc_dss_link="\"".$dss_pref.$row[44].$dss_post."\"";
-$ggc_dss_link2="\"".$dss_pref.$row[44].$dss_large."\"";
+$ggc_dss_link="\"".$dss_pref.$row[39].$dss_post."\"";
+$ggc_dss_link2="\"".$dss_pref.$row[39].$dss_large."\"";
 
-
-
-
-if ($row[42]!="")
+/*
+if ($row[37]!="")
 {
 echo '<tr>';
 echo '<td>';
@@ -502,15 +481,15 @@ echo $row[42];
 echo '</td>';
 echo "</tr>\n";
 };
+*/
 
-
-// ****** CREDITS *****************************************fde
+// ****** CREDITS *****************************************
 
 if ($row[37]!="")
 {
 echo '<tr><td>';
 echo '<font face="Comic Sans MS">';
-echo 'Credits';
+echo '<i>Credits</i>';
 echo '</font>';
 echo '</td>';
 echo '<td><i>';
@@ -566,6 +545,28 @@ echo '<tr><td align="center">';
 
 // se esiste l'immagine in jpg, uso questa...
 
+if ($fp_jpg) 
+	{
+	 echo  '<img src='.$ggc_dss_jpg.'>';
+	}
+	elseif ($fp_simple)
+	{
+	echo '<img src='.$ggc_dss_simple.'>';
+	}
+	elseif ($fp)
+	{
+	echo  '<img src='.$ggc_dss.'>';
+	}
+	elseif ($row[39]!="")
+	{
+	echo '<a href='.$ggc_dss_link2.'><img src='.$ggc_dss_link.' border=0></a>';
+	}
+	else
+	{
+	echo '<center><img src='.'wkonit1.gif'.'></center>';
+    }
+
+/*
 if ($fp_jpg) {
    echo  '<img src='.$ggc_dss_jpg.'>';
   } else {
@@ -586,6 +587,8 @@ if ($fp) {
   };
  };
 };
+*/
+
 
 echo "\n";
 echo '<p><i>Image of the cluster from the <a href="http://en.wikipedia.org/wiki/Digitized_Sky_Survey">Digital Sky Survey</a></i>';
@@ -790,6 +793,8 @@ if ($lresb_1==1) {
     echo ' papers)';
 }
 }     ;
+echo ' :: <a href="https://docs.google.com/spreadsheet/viewform?formkey=dDgtNDRwX0N3OWd2a1F5aGRLSkFaS2c6MQ#gid=0">Submit a paper</a>' ;
+
 echo "</td><tr>";
 
 ?>

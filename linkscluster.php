@@ -2,10 +2,9 @@
 <head><title>GGCs database - Links for cluster</title></head>
 <body background="backgr2.jpg">
 
+<?php 
 
-<?php include 'inte2.php'?>
-
-<?php
+include 'inte2.php';
 include 'conn.php';
  
 $ggc= $_GET['ggc'];
@@ -25,13 +24,24 @@ while ($line = mysql_fetch_row($result)) {
 print "\t<tr>\n";
 
 
-// nome del link
+/*
+ Table 'linkspage': 	
+ 0. ID	
+ 1. name
+ 2. description
+ 3. address
+ 4. image
+ 5. date
+*/
 
-         $col_value=$line[1];
 
-	 print "\t\t<td width=\"40%\"><font face=\"Comic Sans MS\">"."<a href=".$line[3].">".$col_value."</a></font></td>\n";
+// name of the link
 
-// descrizione del link
+     $col_value=$line[1];
+	 print "\t\t<td width=\"40%\"><font face=\"Comic Sans MS\">"."<a href=".$line[3].">".
+	 $col_value."</a></font></td>\n";
+
+// description of the link
 
 	 $col_value=$line[2];
          if  ($line[4]!="")
@@ -42,21 +52,23 @@ print "\t<tr>\n";
           {
            	 print "\t\t<td colspan=2 width=\"40%\"><font face=\"Comic Sans MS\">$col_value</font></td>\n";
           }
-// immagine (se presente)
+          
+// display image (if it is present)
 
         $col_value=$line[4];
-	if  ($line[4]!="")
+		if  ($line[4]!="")
         {
-         print "\t\t<td width=\"40%\">"."<a href=".$line[4].">"."<img src=\"".$col_value.'" width="100%" border="0"></a>'."</td>\n";
-	}
+         print "\t\t<td width=\"40%\">"."<a href=".$line[4].">".
+         "<img src=\"".$col_value.'" width="100%" border="0"></a>'."</td>\n";
+		}
 
 // data di inserimento del link
-	$col_value=$line[5];
+	   $col_value=$line[5];
        print "\t\t<td width=\"40%\"><font size=\"-1\">".$col_value."</font></td>\n";
        print "\t</tr>\n";
 
 }
-print "</table>\n";
+	   print "</table>\n";
 
 // Closing connection
 
@@ -66,7 +78,7 @@ mysql_close($link);
 
 <p>
 <table><tr bgcolor="yellow"><td>
-<a href="linksub.php">Submit a link</a> for this cluster.
+<a href="admin/addlink.php">Submit a link</a> for this cluster.
 </tr></td></table>
 
 <?php include 'coda.html' ?>

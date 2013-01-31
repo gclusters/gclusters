@@ -28,16 +28,16 @@ if($secretpass==$_POST[pass])
 
 {
 
-include_once("../conn.php");
+include_once("conn.php");
 
-// NOMI DELLE TABELLE SU CUI LAVORARE
+// Name of the tables to work on
 
 $tb_name="biblioclusters";
 $tb_tags="bibliotags";
 
 // *******************************
 
-// (1) opero sulla tabella biblioclusters
+// defining the query for "biblioclusters" 
 
 $sql="INSERT INTO $tb_name
 (authors,title,journal,adslink,annoarti,biblio_date)
@@ -51,20 +51,20 @@ VALUES
 '$datains');
 ";
 
-echo 'SQL statement:<p>';
+echo 'SQL statement:<p><i>';
 echo $sql;
-echo "<p>";
+echo "</i><p>";
 echo 'Tag 1: ';
 echo $_POST[tag01].'<br>';
 echo 'Tag 2: ';
 echo $_POST[tag02];
 
 
-// ringraziamenti & chiusura...
+// if all it's ok, than insert data!
 
 echo '<p><i>Is all of this correct?</i><p>';
 echo '<ul><li><a href="ipaper.php">YES! Please add my data!</a></li>';
-echo '<li><a href="">NO! Take me back now!</a></li></ul>';
+echo '<li><a href="paperins.php">NO! Take me back now!</a></li></ul>';
   }
   else
   {

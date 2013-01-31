@@ -2,6 +2,8 @@
 
 // not used!
 
+// Pirolero!!!
+
 include 'conn.php';
 
 // define queries ...
@@ -17,6 +19,7 @@ $query_auth = "SELECT * FROM parameters where ID like '$ggc' or name like '$ggc'
 $result = mysql_query($query_auth) or die("Query failed");
 $numres = mysql_num_rows($result);
 
+// TEST
 
 if (!$numres)
 {

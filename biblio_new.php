@@ -6,11 +6,10 @@ include 'columns.php';
 
 // define queries ...
 
-$ggc=trim($ggc);
-
 $query_auth = "SELECT * FROM biblioclusters ORDER BY biblio_date DESC LIMIT 5";
 $result = mysql_query($query_auth) or die("Query failed");
 $numres = mysql_num_rows($result);
+
 
 ?>
 
@@ -97,6 +96,16 @@ echo 'Year';
 echo '</td><td>';
 echo $line[6];
 echo "</td></tr>\n";
+
+if ($line[11]!="")
+    {
+echo '<tr><td>';
+echo 'Actions';
+echo '</td><td>';
+echo '<a href="'.$line[11].'">Comment this paper on JournalFire</a>';
+echo "</td></tr>\n";
+    }
+
 
 // Eventuale diagramma CM
 if ($line[7]!="")

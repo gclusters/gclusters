@@ -4,7 +4,7 @@
 
 
 <?php 
-
+$sel="ID";
 $sel= $_GET['sel'];
 include 'inte2.php'
 

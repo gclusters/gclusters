@@ -1,12 +1,9 @@
 <html>
 <head><title>GGCs database - Links for cluster</title></head>
-<body background="http://www.mporzio.astro.it/images/backgr2.jpg">
+<body background="backgr2.jpg">
 
 <?php include 'inte2.php'?>
 
-<table border=1><tr><td><i>
-Links to be listed in this page can be submitted by any user of the GGC-DB
-</i></td></tr></table>
 <p>
 
 <?php
@@ -78,7 +75,7 @@ mysql_close($link);
 
 <p>
 <table><tr bgcolor="yellow"><td>
-<a href="linkmsub.php">Submit a link</a> for a cluster.
+<a href="admin/addlink.php">Submit a link</a> for a cluster.
 </tr></td></table>
 
 <?php include 'coda.html' ?>

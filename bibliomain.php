@@ -1,8 +1,8 @@
 <html>
 <head><title>GGCs database: bibliography</title></head>
-<body background="images/backgr2.jpg" vlink="#3333CC">
+<body background="backgr2.jpg" vlink="#3333CC">
 
-<? include 'inte2.php'?>
+<?php include 'inte2.php' ?>
 
 <h1>Bibliography</h1>
 <table border=0><tr><td><i>
@@ -17,7 +17,8 @@ Selected papers related to our Globular Clusters system
 include 'conn.php';
 
 // Performing SQL query
-$query = "SELECT authors,title,journal,annoarti,adslink FROM bibliomain ORDER BY annoarti DESC";
+$query = "SELECT authors,title,journal,annoarti,adslink FROM bibliomain 
+ORDER BY annoarti DESC";
 
 $result = mysql_query($query) or die("Query failed");
 
@@ -26,6 +27,7 @@ $result = mysql_query($query) or die("Query failed");
 // headers
 
 print "<table border=5>\n";
+
 print "\t<tr align=center>\n";
 print "\t\t<td><b>Author(s)</b></td>\n";
 print "\t\t<td><b>Title</b></td>\n";
@@ -33,7 +35,7 @@ print "\t\t<td><b>Journal</b></td>\n";
 print "\t\t<td><b>Year of publication</b></td>\n";
 print "\t</tr>\n";
 
-// print of data
+// print of the data
 
 while ($line = mysql_fetch_array($result))
  {
@@ -56,15 +58,16 @@ print "\t<td align=\"center\">\n";
 print $line[3];
 print "\t</td>\n";
 
-
 }
 print "</table>\n";
+
 ?>
+
+
 <p>
 <img src="wkonit1.gif">
 
 <?
-
 
 // Closing connection
 mysql_close($link);

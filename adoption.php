@@ -3,7 +3,10 @@
 <body background="backgr2.jpg" vlink="#3333CC">
 
 
-<?php include 'inte2.php'?>
+<?php 
+include 'inte2.php'
+?>
+
 <center>
 <h2>Adopt a cluster!</h2>
 <h3>Help us to keep this database up-to-date, giving us a few minutes of your time 

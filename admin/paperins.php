@@ -22,64 +22,64 @@ Use this form to submit a paper in the GGCs-DB
 
 <form action="prepaper.php" method="post">
 
-<table border="1" width="70%">
+<table>
 
 <tr>
 
-<td width="40%">
+<td>
 Name of the cluster:
 </td>
 
-<td width="60%">
-<input type=text size=30 name="cluster">
+<td>
+<input type=text name="cluster">
 </td>
 
 </tr>
 
 <tr>
 
-<td width="40%">
+<td>
 Author(s) of the paper:
 </td>
 
-<td width="60%">
-<input type=text size=30 name="autore">
+<td>
+<input type=text name="autore">
 </td>
 
 </tr>
 
 <tr>
 
-<td width="40%">
+<td>
 Title:
 </td>
 
-<td width="60%">
-<textarea cols=22 name="titolo" rows=3></textarea>
+<td>
+<textarea name="titolo"></textarea>
 </td>
 
 </tr>
 
 <tr>
 
-<td width="40%">
+<td>
 Journal:
 </td>
 
-<td width="60%">
-<input type=text size=30 name="journal">
+<td>
+<input type=text name="journal">
 </td>
 
 </tr>
 
 <tr>
 
-<td width="40%">
+<td>
 Link:
 </td>
 
-<td width="60%">
-<input type=text size=30 name="plink">
+<td>
+<input type=text name="plink">
 </td>
 
 </tr>
@@ -91,7 +91,7 @@ Publication Date:
 </td>
 
 <td>
-<input type=text size=30 name="annoart">
+<input type=text name="annoart">
 </td>
 
 </tr>
@@ -103,7 +103,7 @@ Tag 1:
 </td>
 
 <td>
-<input type=text size=30 name="tag01">
+<input type=text name="tag01">
 </td>
 
 </tr>
@@ -115,7 +115,7 @@ Tag 2:
 </td>
 
 <td>
-<input type=text size=30 name="tag02">
+<input type=text name="tag02">
 </td>
 
 </tr>
@@ -123,13 +123,14 @@ Tag 2:
 <tr>
 
 <td>Password: </td>
-<td><input type=password size=30 name="pass"></td>
+<td><input type=password name="pass"></td>
 
 </tr>
 
 </table>
 
 <p>
+
 <INPUT TYPE=RESET VALUE="clear">
 <INPUT TYPE=SUBMIT VALUE="submit">
 

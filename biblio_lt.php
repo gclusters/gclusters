@@ -6,7 +6,7 @@ include 'columns.php';
 
 // define queries ...
 
-$ggc=trim($ggc);
+//$ggc=trim($ggc);
 
 $query_auth = "SELECT * FROM biblioclusters ORDER BY mdate DESC LIMIT 1";
 
@@ -91,6 +91,14 @@ echo '</td><td>';
 echo $line[6];
 echo "</td></tr>\n";
 
+if ($line[11]!="")
+    {
+echo '<tr><td>';
+echo 'Actions';
+echo '</td><td>';
+echo '<a href="'.$line[11].'">Comment this paper on JournalFire</a>';
+echo "</td></tr>\n";
+    }
 
 // altra URL per scaricare l'articolo...
 if ($line[10]!="")

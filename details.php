@@ -97,7 +97,7 @@ echo "\n";
    print "\t<tr>\n";
    print "\t\t<td><i>".$col[$line[2]]."</i></td>\n";			// Parameter
    print "\t\t<td><i>".$line[3]."</i></td>\n";					// Value
-   print '<td><a href="'.$line[6].'">'.$line[4].'</a></td>';	// Source
+	   print '<td><a href="'.$line[6].'">'.$line[4].'</a></td>';	// Source
    print "\t\t<td><i>".$line[5]."</i></td>\n";					// Year
    print "\t</tr>\n";
 

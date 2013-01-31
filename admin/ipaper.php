@@ -6,7 +6,7 @@
 
 <body background="backgr2.jpg" text="#000000" vlink="#330099">
 <h2>Inserimento articolo nel database...</h2>
-<br>
+<br><p>
 
 <?php
 
@@ -20,7 +20,8 @@ echo '<p>'.$datains;
 
 $secretpass="totigi";
 
-if($secretpass==$_POST[pass])
+//if($secretpass==$_POST[pass])
+if($secretpass)
 
 {
 
@@ -33,7 +34,7 @@ $tb_tags="bibliotags";
 
 // *******************************
 
-// (1) opero sulla tabella biblioclusters
+// working on "biblioclusters"
 
 $sql="INSERT INTO $tb_name
 (authors,title,journal,adslink,annoarti,biblio_date)
@@ -44,14 +45,15 @@ VALUES
 '$_POST[journal]',
 '$_POST[plink]',
 '$_POST[annoart]',
-'$datains');
-";
+'$datains')";
 
 echo $sql;
 echo "<p>";
-
+/*
 // INSERISCO IL RECORD CON L'ARTICOLO
-$result = mysql_query($sql) or die("Problems in submitting your data!");
+$result = mysql_query($sql) or die("Problems with biblioclusters!");
+
+
 
 // ************************************
 
@@ -86,6 +88,8 @@ if ('$_POST[tag02]'!=="") // se c'e' anche il secondo tag
    echo $insertag2;
    }
 
+*/
+
 // ringraziamenti & chiusura...
 
 echo '<p><i>Thank you for submitting data to the GGCs-DB!<p>';
@@ -96,7 +100,7 @@ echo '<p>Sorry, but it seems that the password is wrong </p>';
   }
 
 // include 'codadm.html';
-*/
+
 ?>
 
 </body>

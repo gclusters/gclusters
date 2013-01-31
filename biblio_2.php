@@ -5,8 +5,7 @@ include 'conn.php';
 $ggc= $_GET['ggc'];
 $ggc=trim($ggc);
 
-// Seleziono le righe (in biblioclusters) corrispondenti alla tag 
-// con il nome dell'ammasso (in bibliotags)
+// Selecting the rows with the appropriate tag
 
 $query_auth = "select biblioclusters.* from biblioclusters,bibliotags 
 where bibliotags.tag like '%$ggc%' and biblioclusters.ID=bibliotags.paper 
@@ -17,14 +16,14 @@ $numres = mysql_num_rows($result);
 
 ?>
 
-
 <HTML>
 <HEAD>
 <TITLE>
-
 <?php
 
 if (!$numres) {
+
+// what to do in case of no bibliography or wrong cluster name
 
 echo 'GGCs database: no bibliography available';
 echo "</TITLE>\n";
@@ -32,21 +31,24 @@ echo "</TITLE>\n";
 echo "<meta name=\"Author\" content=\"Marco Castellani\">\n";
 echo "<meta name=\"Keywords\" content=\"astronomy, Milky Way, globular clusters\">\n";
 echo "</HEAD>\n";
-echo '<BODY background="backgr2.jpg" TEXT="#0000FF" LINK="#0000FF" VLINK="#A020F0" ALINK="#FF0000">';
+echo '<BODY background="backgr2.jpg" TEXT="#0000FF" 
+LINK="#0000FF" VLINK="#A020F0" ALINK="#FF0000">';
 include 'inte2.php';
 
 echo '<h1>','<i>Your query: </i>',$ggc,'</h1>';
 echo "\n";
 
-echo "<h3>Sorry, no bibliography available for this cluster in the GGCs-DB !</h2>\n";
+echo "<h3>Sorry, no bibliography available for this cluster!<p> 
+Are you sure <i>it actually exists...?</i></h2>\n";
 include 'coda.html';
 echo '</body></html>';
 echo "\n";
 exit;
+
 }
 
-
 echo 'GGCs database: bibliography for globular cluster ',$ggc;
+
 ?>
 
 </TITLE>
@@ -59,14 +61,21 @@ echo 'GGCs database: bibliography for globular cluster ',$ggc;
 <BODY background="backgr2.jpg" TEXT="#0000FF" LINK="#0000FF" VLINK="#A020F0" ALINK="#FF0000">
 <?php
 include 'inte2.php';
-?>
-
-<?php
 include 'columns.php';
 ?>
 <center>
+<table>
+<tr><td>
+<img src="ima/other/stack_of_books.png">
+</td><td>
 <b>
-Selected bibliography</b>
+<font size="+2" color="grey"><i> Selected bibliography </i></font>	</b>
+</td>
+<td>
+<img src="ima/other/stack_of_books.png">
+</td>
+
+</tr></table>
 </center><hr>
 <?php
 echo '<h1>','<i>Your query: </i>',$ggc,'</h1>';
@@ -92,7 +101,7 @@ $num_paper= mysql_num_rows($res_names);
 $ggc_cmd="ima/".$line[7]; // locazione del file del CMD nel filesystem
 ?>
 
-<!-- stampo i risultati su tabella -->
+<!-- print results on a table -->
 
 <table width="90%" border=2>
 
@@ -100,7 +109,10 @@ $ggc_cmd="ima/".$line[7]; // locazione del file del CMD nel filesystem
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
 
 <?php
-echo 'Reference n. '.$iiref;
+$artnum=$line[4];
+//echo 'Reference n. '.$iiref.' <i>(gc'.$line[4].')</i>';
+echo 'Reference n. '.$iiref." <i>(<a href=\"article.php?idart=$artnum\">gc".$artnum.'</a>)</i>';
+
 echo '</td></tr>';
 echo '<tr>';
 echo '<td width="20%"> ';
@@ -129,22 +141,21 @@ echo "\n";
 if ($line[7]!="")
     {
 
-// Settore B1 ...
-// Individuo il nome corretto per il file con il CMD...
+// Finding the file with the CMD ...
 
 $ggc_cmd_new="ima/".$line[7];
 $ggc_cmd_png=$ggc_cmd_new.'.png';
 $ggc_cmd_gif=$ggc_cmd_new.'.gif';
 $ggc_cmd_jpg=$ggc_cmd_new.'.jpg';
 
-// Provo ad aprire i files con le differenti estensioni possibili...
+// Trying to open file with various extensions ...
 
 @ $fpp_new = fopen ($ggc_cmd_new, "r");
 @ $fpp_png = fopen ($ggc_cmd_png, "r");
 @ $fpp_gif = fopen ($ggc_cmd_gif, "r");
 @ $fpp_jpg = fopen ($ggc_cmd_jpg, "r");
 
-// Scelgo il file che "si apre"...
+// Choosing the 'right' file ...
 
 if($fpp_new) {
     $ggc_cmd=$ggc_cmd_new;	// perfetto così
@@ -156,16 +167,13 @@ if($fpp_new) {
     $ggc_cmd=$ggc_cmd_jpg;	// va bene il JPG
 
 } else {
-$ggc_cmd=$line[9];  // uso il link a risorsa esterna
+$ggc_cmd=$line[9];  // external link
 }
-
-
-// concluso settore B1
 
 echo '<tr><td>';
 echo 'CM diagram';
 echo '</td><td>';
-echo '<img src='.$ggc_cmd.'>';
+echo '<img src="'.$ggc_cmd.'" width="40%">';
 echo '</td></tr>';
 echo "\n";
     }
@@ -180,8 +188,19 @@ echo '</td></tr>';
 echo "\n";
    }
 
-// Inserisco qui blocco per visualizzazione tags (A2)
-// ************************* blocco A2 *****************
+// JournalFire...
+if ($line[11]!="")
+    {
+echo '<tr><td>';
+echo 'Actions';
+echo '</td><td>';
+echo '<a href="'.$line[11].'">Comment this paper on JournalFire</a>';
+echo "</td></tr>\n";
+    }
+	
+
+// Displaying the right tags ...
+
 echo '<tr><td>';
 echo 'Tags';
 echo "</td><td>\n";
@@ -196,13 +215,11 @@ for ($nnp=0; $nnp < $num_paper; $nnp++)
   }
 
 echo "</td></tr>\n";
-// ****************************************************
-// Fine blocco visualizzazione tags
 
 echo '</table><p>';
 echo "\n";
-} // chiusura del while di riga 79
 
+} 
 // Closing connection
 
 mysql_close($link);

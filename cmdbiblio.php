@@ -7,7 +7,9 @@ $ggc=trim($ggc);
 
 // Seleziono le righe (in biblioclusters) corrispondenti alla tag con il nome dell'ammasso (in bibliotags)
 
-$query_auth = "select biblioclusters.* from biblioclusters,bibliotags where bibliotags.tag like '%$ggc%' and biblioclusters.ID=bibliotags.paper and bibliclusters.cmdiagrams="lavori.gif" ORDER BY annoarti DESC, mdate DESC";
+$query_auth = "select biblioclusters.* from biblioclusters,bibliotags 
+where bibliotags.tag like '%$ggc%' and biblioclusters.ID=bibliotags.paper 
+and bibliclusters.cmdiagrams=\"lavori.gif\" ORDER BY annoarti DESC, mdate DESC";
 
 $result = mysql_query($query_auth) or die("Query failed");
 $numres = mysql_num_rows($result);

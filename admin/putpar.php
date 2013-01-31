@@ -36,7 +36,7 @@ if($secretpass==$_POST[pass])
 
 {
 
-include_once("conn.php");
+include_once("../conn.php");
 
 // NOMI DELLE TABELLE SU CUI LAVORARE
 

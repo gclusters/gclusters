@@ -210,6 +210,12 @@ Name
 </li>
 
 <li>
+<font size="+1" color="#330099">Biblio search</font>
+- yet another <font size="+1"><a href="bibliosearch.php">search page</a></font>
+<img src="new_anim.gif">
+</li>
+
+<li>
 <font size="+1" color="#330099">Random cluster:
 </font>
 
@@ -241,34 +247,25 @@ print "<a href=\"cluster_4.php?ggc=".urlencode($clday[0])."\">".$clday[0]."</a>"
 Browse Tables</b></i></td></tr>
 <tr><td align="center">
 <font size="+1">
-<a href="table1a.php">Table 1</a></font> - Positional Parameters
+<a href="table1a.php?sel=ID">Table 1</a></font> - Positional Parameters
 
 <tr><td align="center">
 
 <font size="+1">
-<a href="table2a.php">Table 2</a></font> - Photometric Parameters
+<a href="table2a.php?sel=ID">Table 2</a></font> - Photometric Parameters
 
 <tr><td align="center">
 
 <font size="+1">
-<a href="table3a.php">Table 3</a></font> - Structural Parameters
+<a href="table3a.php?sel=ID">Table 3</a></font> - Structural Parameters
 
 <tr><td align="center">
 
 <a href="param.php">
 A brief description of parameters listed in Tables 1,2,3</a>
 
-
-<!--
-<tr><td align="center">
-
-<font size="+1">
-<a href="biblio.php">Table 4</a></font> - Bibliographics items
-
-</tr></td>
-
--->
 </table>
+
 
 <!--  Table PREPRINTS  -->
 <table border=6 width=100%><tr>
@@ -384,7 +381,7 @@ echo '<tr><td>';
 </table>
 <p>
 
-<!-- Tabella aggiunte pi recenti -->
+<!-- Display most recent data -->
 
 <table border=6 width=100%><tr>
 <td bgcolor="#FFCC99" align="center" width=100%><i><b>
@@ -412,13 +409,17 @@ Bibliography
 </i></b></center></td></tr>
 <tr><td>
 <?
-echo "<b>".$l_biblio[0]."</b> - ";
+echo "<b>".$l_biblio[0]."</b> - "; // Authors
 echo "<a href=\"biblio_lt.php\">";
-echo $l_biblio[1];
+echo $l_biblio[1];	// Title					
 echo "</a> - <i>";
-echo $l_biblio[2];
-echo "<font size=\"-1\"> (".$l_biblio[6].")</font>";
-echo "<br><font size=\"-1\">(added: ".$l_biblio[8].")</font></i>";
+echo $l_biblio[2];	// Journal
+echo "<font size=\"-1\"> (".$l_biblio[6].")</font>";	// Year
+if ($l_biblio[9])
+{
+echo '<a href="'.$l_biblio[9].'">[Discuss this paper]</a>';
+}
+echo "<br><font size=\"-1\">(added: ".$l_biblio[8].")</font></i>";	// Added...
 ?>
 
 <tr><td align="center"><b><i><a href="recparam.php">Parameters</a></i></b>
@@ -428,16 +429,18 @@ echo "<br><font size=\"-1\">(added: ".$l_biblio[8].")</font></i>";
 <b><i>New data for </i></b>
 <?php 
 
-// **WM1** conteggio ammassi *diversi* con parametri aggiunti
+$ncont=1;
 
 while($ncont<3) {
 	
   $l_par = mysql_fetch_row($res_npar);
-  $clpar[$ncont]=$l_par[0]; 
+  $clpar[0]='';
+  $clpar[$ncont]=$l_par[0];	// saving name of the actual cluster... 
 
+	
   if($clpar[$ncont]!=$clpar[$ncont-1])
          {
-	 echo $clpar[$ncont].", ";
+	 	 echo $clpar[$ncont].", ";
          $ncont ++; // incremento l'indice SOLO in caso di ammassi diversi
          }
 }
@@ -449,6 +452,7 @@ while($ncont<3) {
 <tr><td align="center"><b><i><a href="adoption.php">Tutors</a></i></b>
 </td></tr><tr><td align="center"><i>
 <?php
+$ntut=0;
 while($ntut<3) {
 $mque = mysql_fetch_row($rque);
 echo $mque[0].' '.$mque[1].', ';
