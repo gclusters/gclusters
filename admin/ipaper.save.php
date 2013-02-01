@@ -91,7 +91,7 @@ $itag1 = mysql_query($insertag1) or die("Problems in $itag1");
 
    if ('$_POST[tag02]'!=="") // se c'e' anche il secondo tag
    {
-     $itag2 = mysql_query($insertag2) or die("Problems in $itag2");	
+     $itag2 = mysql_query($insertag2) or die("Problems in $itag2")
      echo $insertag2;
    }
 

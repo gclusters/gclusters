@@ -13,6 +13,8 @@
 
 // connessione al database
 
+// cippaLippa!!! 
+
 include 'conn.php';
 
 // leggo le statistiche
