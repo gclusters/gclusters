@@ -15,7 +15,7 @@ monitoring the presence of new data
 </center>
 <br>
 <p>
-Here you can choose to "adopt" a cluster. The adoption mechanism run as follows:
+Here you can choose to "adopt" a globular cluster. The adoption mechanism run as follows:
 <ul>
 <li>
 By <a href="form-adopt.php">adopting a cluster</a>
