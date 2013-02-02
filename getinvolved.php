@@ -10,7 +10,9 @@
 
 <p>
 
-Are you interested in the developement of <a href="index.php">Gclusters</a> ? Great! You don't have to be an experd of HTML or PHP, and you don't need to spend a great amount of time. A big portion of the help I need is simply feedback and reports of problems and bugs.
+Are you interested in the developement of <a href="index.php">Gclusters</a> ? 
+Great! You don't have to be an experd of HTML or PHP, and you don't need to spend a great amount of time. 
+A big portion of the help I need is simply feedback and reports of problems and bugs.
 
 <p>
 Here are some possible way to help:
@@ -29,7 +31,7 @@ take part in the related <a href="http://scdb.projects.zoho.com/">Stellar Cluste
 
 <p>
 <b>Marco Castellani</b>
-<br>Mail contact: <i>marco.castellani .at. oa-roma.inaf.it</i>
+<br>Mail contact: <i>m.castellani .at. oa-roma.inaf.it</i>
 
 <p>
 <a href="http://www.zohoprojects.com">

@@ -19,14 +19,16 @@
  (but you can easily extend to other cases as well)...
 
 <ul>
-<li>Milone et al, <a href="http://adsabs.harvard.edu/abs/2012ApJ...744...58M">Multiple Stellar Populations in 47 Tucanae</a>
+<li>Milone et al, <a href="http://adsabs.harvard.edu/abs/2012ApJ...744...58M">
+	Multiple Stellar Populations in 47 Tucanae</a>
 <i>(bibliographic item)</i></li>
 
 <li><a href="http://apod.nasa.gov/apod/ap110116.html">Globular Star Cluster 47 Tuc</a>
 <i> (link to a resource on the web)</i></li>
 
 <li>Unreddened distance modulus: 13.36 +/- 0.02 +/- 0.06 
-(source: <a href="http://adsabs.harvard.edu/abs/2012AJ....143...50W">Woodley et al.</a>) <i> (parameter value)</i>
+(source: <a href="http://adsabs.harvard.edu/abs/2012AJ....143...50W">
+	Woodley et al.</a>) <i> (parameter value)</i>
 <li>...</li>
 </ul>
 
