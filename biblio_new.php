@@ -35,7 +35,7 @@ Gclusters :: Selected bibliography
 </center><hr>
 
 <h2><i>Latest five items added to the database</i><br>
-(<a href="biblio_all.php">click here</a> to see all items)</h2>
+(<a href="biblio_all.php?page=1">click here</a> to see all items)</h2>
 
 
 <?php

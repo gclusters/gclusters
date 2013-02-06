@@ -7,7 +7,7 @@ include 'columns.php';
 // define queries ...
 
 $page= $_GET['page'];
-$ggc=trim($ggc);
+// $ggc=trim($ggc);
 
 $pgn = $page * 25;
 
