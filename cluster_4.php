@@ -15,7 +15,6 @@ $query_auth = "SELECT * FROM parameters where ID like '$ggc' or name like '$ggc'
 $result = mysql_query($query_auth) or die("Query failed");
 $numres = mysql_num_rows($result);
 
-
 if (!$numres)
 {
 // Non ho trovato nulla, allora allargo i criteri di ricerca...
@@ -27,7 +26,6 @@ $numres = mysql_num_rows($result);
 $row = mysql_fetch_row($result);
 
 ?>
-
 
 <HTML>
 <HEAD>
@@ -166,6 +164,15 @@ echo "</TITLE>\n";
 
 <meta name="Author" content="Marco Castellani">
 <meta name="Keywords" content="astronomy, Milky Way, globular clusters">
+
+<style type="text/css">		
+	.testoverde {
+		font-family:"Book Antiqua";
+		font-style: italic;
+		color:green;
+		text-align:justify;
+		}
+</style>
 
 </HEAD>
 
@@ -517,10 +524,12 @@ if($b_row[4]){
 
 echo '<tr><td align=CENTER BGCOLOR="#99CCFF">';
 echo '<b>Description of '; 
-echo $b_row[0];
+echo $b_row[0];	// name of the cluster				
 echo "</td></tr>\n";
-echo '<tr><td><i>';
-echo '<p><div align="justify"><font size="3">'.$b_row[4]."</font></div>\n";
+echo '<tr><td class="testoverde"><i>';
+// echo '<p class="testoverde"><div align="justify"><font size="3">'.$b_row[4]."</font></div>\n";
+echo '<p>'.$b_row[4]."</p>\n";
+
 echo '</i><p>';
 echo '<i>Source: <a href="'.$b_row[6].'">'.$b_row[5].'</a>';
 echo ' | <a href="feedbackform.php">Notify inaccuracies</a></i>';
