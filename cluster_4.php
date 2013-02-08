@@ -834,6 +834,8 @@ echo'<p>(See <a href="adoption.php">how to adopt</a> a cluster</a>)';
 </table>
 <p>
 
+<div class="testoverde">
+
 <?php
  echo "<p>Query processed at ";
  echo date("H:i, jS F");
@@ -867,6 +869,7 @@ echo $cluster_update;
 echo "</i>";
 };
 ?>
+</div>
 <br>
 <fb:like></fb:like>
 
