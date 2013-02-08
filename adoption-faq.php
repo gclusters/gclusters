@@ -2,7 +2,6 @@
 <head><title>GGCs database: "adoption" FAQ</title></head>
 <body background="backgr2.jpg" vlink="#3333CC">
 
-
 <?php include 'inte2.php'?>
 <center>
 <h2>Adoption FAQ page</h2>
@@ -36,7 +35,6 @@
 <b>Q: What happen if I do not send you any info for a long time?</b><br>
 <b>A:</b> If we have no activity from you for a whole year, we can think about removing your name on the given cluster,
 in order to free the slot for other person that may have more time (we'll send you a mail before doing any action)...
-
 
 <p>
 <b>Q: I've changed my mind! Can I resign from tutoring my cluster(s)?</b> <br>
