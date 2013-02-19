@@ -322,7 +322,6 @@ $lresb_1 = mysql_num_rows($lresb);  // number of paper related to $mycluster
 
 if  ($lresb_1) // if there are papers to be displayed
   {
-
 echo '<tr>';
 echo '<td colspan=2 align=CENTER BGCOLOR="#66FFCC">';
 echo '<i>Color-magnitude diagrams</i>';
@@ -406,10 +405,11 @@ $ggc_temp=$rowcmd[7]; // campo "cmdiagrams" di "biblioclusters"
 
 // provo prima ad aprire direttamente l'immagine come link...
 
-$ggc_image=$rowcmd[9]; // campo "linkima" di "biblioclusters"
+$ggc_image=$row[38];		// campo "linkimage" di "parameters"
+// $ggc_image=$rowcmd[9]; // campo "linkima" di "biblioclusters"
 @ $fpweb = fopen ($ggc_image, "r");
 
-// Carico l'immagine dal link esterno...
+// Loading ima from external link (if possible) ...
 if($fpweb){
    echo '<img src='.$ggc_image.' width=500>';
    	} else {
@@ -420,12 +420,10 @@ $ggc_image=$ggcpre.$ggc_temp.".jpg";	// adding jpg
 $ggc_png=$ggcpre.$ggc_temp.".png";		// adding png
 $ggc_gif=$ggcpre.$ggc_temp.".gif";		// adding gif
 
-@ $fp_new = fopen ($ggc_new, "r");
-@ $fp = fopen ($ggc_image, "r");
-@ $fp1 = fopen ($ggc_png, "r");
-@ $fp_gif = fopen ($ggc_gif, "r");
-
-
+@ $fp_new = fopen ($ggc_new, "r");		// simple
+@ $fp = fopen ($ggc_image, "r");		// jpg
+@ $fp1 = fopen ($ggc_png, "r");			// png
+@ $fp_gif = fopen ($ggc_gif, "r");		// gif
 
 // ...in lavorazione...
 
