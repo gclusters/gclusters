@@ -64,7 +64,7 @@ print "\t<tr>\n";
 
 // data di inserimento del link
 	   $col_value=$line[5];
-       print "\t\t<td width=\"40%\"><font size=\"-1\">".$col_value."</font></td>\n";
+       print "\t\t<td width=\"40%\"><i>".$col_value."</i></td>\n";
        print "\t</tr>\n";
 
 }
