@@ -72,7 +72,7 @@ $num_paper= mysql_num_rows($res_names);
 
 <?php
 
-
+// AUTHOR
 echo '<tr>';
 echo '<td width="20%"> ';
 echo 'Author';
@@ -80,6 +80,7 @@ echo '</td><td>';
 echo $line[0];
 echo "</td></tr>\n";
 
+// TITLE & URL
 echo '<tr><td>';
 echo 'Title';
 echo '</td><td>';
@@ -90,18 +91,32 @@ echo $line[1];
 echo "</a>";
 echo "</td></tr>";
 
+// JOURNAL
 echo "<tr><td>\n";
 echo 'Journal';
 echo '</td><td>';
 echo $line[2];
 echo '</td></tr>';
 
+// YEAR
 echo '<tr><td>';
 echo 'Year of publication';
 echo '</td><td>';
 echo $line[6];
 echo "</td></tr>\n";
 
+// ABSTRACT 
+if ($line[12]!="")
+    {
+echo '<tr><td>';
+echo 'Abstract';
+echo '</td><td>';
+echo "<i>$line[12]</i>";
+echo "</td></tr>\n";
+    }
+
+
+// ACTIONS
 if ($line[11]!="")
     {
 echo '<tr><td>';

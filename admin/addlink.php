@@ -76,8 +76,6 @@ Image URL (optional):
 </td>
 </tr>
 
-
-
 <tr>
 <td>Password: </td>
 <td><input type=password name="pass"></td>

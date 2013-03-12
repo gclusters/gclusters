@@ -6,11 +6,23 @@
 
 <body background="../backgr2.jpg" text="#000000" vlink="#330099">
 
+<?php 
+
+include '../conn.php';
+
+// how many papers are in the DB now?
+
+$papersql = "SELECT ID from biblioclusters ORDER BY mdate DESC LIMIT 1";
+$popnum = mysql_query($papersql) or die("Uff... Problems with our database");
+$topart = mysql_fetch_row($popnum);
+$topar = $topart[0];
+$topnext = $topar+1;
+
+?>
+
 <center>
 <img src="../globular_1.gif"><br>
 <img src="../globular_2.gif">
-<p>
-
 </center>
 
 <p>
@@ -18,6 +30,11 @@
 <strong>
 Use this form to submit a paper in the GGCs-DB
 </strong>
+
+<?php	
+echo "<br><i>(we have $topar article are stored so far, please insert number $topnext)</i>";
+?>
+
 <p>
 
 <form action="prepaper.php" method="post">
@@ -123,7 +140,7 @@ Tag 2:
 <tr>
 
 <td>Password: </td>
-<td><input type=password name="pass"></td>
+<td><input type=password name="mypass"></td>
 
 </tr>
 

@@ -22,9 +22,16 @@ $datains=$anno."-".$mese."-".$giorno;
 echo 'Today is ';
 echo $datains.'<p>';
 
+$mypass = '';
+
+echo 'password!<br>';
+echo $_POST["mypass"];
+echo $_POST["titolo"];
+
+
 $secretpass="totigi";
 
-if($secretpass==$_POST[pass])
+if($secretpass==$_POST[mypass])
 
 {
 
