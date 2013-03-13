@@ -62,7 +62,7 @@ $num_paper= mysql_num_rows($res_names);
 <!-- stampo i risultati su tabella -->
 
 
-<table width="90%" border=2>
+<table width="90%" border=0>
 
 <tr>
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
@@ -72,8 +72,11 @@ $num_paper= mysql_num_rows($res_names);
 
 <?php
 
+$codcol=0;
+
 // AUTHOR
-echo '<tr>';
+
+echo '<tr bgcolor="#CCCCCC">';
 echo '<td width="20%"> ';
 echo 'Author';
 echo '</td><td>';
@@ -81,7 +84,7 @@ echo $line[0];
 echo "</td></tr>\n";
 
 // TITLE & URL
-echo '<tr><td>';
+echo '<tr bgcolor="#CCCC99"><td>';
 echo 'Title';
 echo '</td><td>';
 echo '<a href=';
@@ -92,14 +95,14 @@ echo "</a>";
 echo "</td></tr>";
 
 // JOURNAL
-echo "<tr><td>\n";
+echo "<tr bgcolor='#CCCCCC'><td>\n";
 echo 'Journal';
 echo '</td><td>';
 echo $line[2];
 echo '</td></tr>';
 
 // YEAR
-echo '<tr><td>';
+echo '<tr bgcolor="#CCCC99"><td>';
 echo 'Year of publication';
 echo '</td><td>';
 echo $line[6];
@@ -108,7 +111,7 @@ echo "</td></tr>\n";
 // ABSTRACT 
 if ($line[12]!="")
     {
-echo '<tr><td>';
+echo '<tr bgcolor="white"><td>';
 echo 'Abstract';
 echo '</td><td>';
 echo "<i>$line[12]</i>";

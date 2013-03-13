@@ -7,7 +7,6 @@ include 'columns.php';
 // define queries ...
 
 $page= $_GET['page'];
-// $ggc=trim($ggc);
 
 $pgn = $page * 25;
 
@@ -19,9 +18,7 @@ $numres = mysql_num_rows($result);
 ?>
 
 <HTML>
-
 <HEAD>
-
 <TITLE>Gclusters :: Selected bibliography</TITLE>
 
 <meta name="author" content="Marco Castellani">
@@ -30,7 +27,6 @@ $numres = mysql_num_rows($result);
 </HEAD>
 
 <body background="backgr2.jpg">
-
 
 <center>
 <table border=3>
@@ -152,7 +148,8 @@ echo "<tr><td>\n";
 echo 'Title';
 echo "</td><td>\n";
 echo '<a href=';
-echo $line[3];
+//echo $line[3];
+echo "article.php?idart=$line[4]";
 echo ">";
 echo $line[1];
 echo "</a>";
