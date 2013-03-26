@@ -22,7 +22,7 @@ default:
 	$frase="0";
 }
 
-// extracting values ...
+// extracting values .....
 $selbib = mysql_query($myquery) or die("Query failed");
 $numres = mysql_num_rows($selbib);
 

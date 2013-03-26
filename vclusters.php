@@ -62,7 +62,8 @@ $nvisited++;
 </table>
 
 <p>
-<i>Take a look also at the table of <a href="uclusters.php">recently updated clusters</a></i>
+<i>Take a look also at the table of our <a href="vbiblio.php">most viewed papers</a> or see the list of
+	 <a href="uclusters.php">recently updated clusters</a></i>
 </center>
 <p>
 

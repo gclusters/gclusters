@@ -6,8 +6,17 @@ include 'lpar.php';
 
 // define queries ...
 
+
+
 $ggc= $_GET['ggc'];
 $param=$_GET['param'];
+
+// Error if loaded without parameters
+
+if (!$ggc) {
+	echo'Error loading parameters for this page';
+	exit;
+}
 
 $ggc=trim($ggc);
 

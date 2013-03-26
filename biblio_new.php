@@ -5,11 +5,9 @@ include 'inte2.php';
 include 'columns.php';
 
 // define queries ...
-
 $query_auth = "SELECT * FROM biblioclusters ORDER BY biblio_date DESC LIMIT 5";
 $result = mysql_query($query_auth) or die("Query failed");
 $numres = mysql_num_rows($result);
-
 
 ?>
 
@@ -35,8 +33,7 @@ Gclusters :: Selected bibliography
 </center><hr>
 
 <h2><i>Latest five items added to the database</i><br>
-(<a href="biblio_all.php?page=1">click here</a> to see all items)</h2>
-
+(<a href="biblio_all.php?page=0">click here</a> to see all items)</h2>
 
 <?php
 $iiref=0;
@@ -48,7 +45,6 @@ $iiref++;
 $query_names = "SELECT tag FROM bibliotags WHERE paper = '$line[4]'";
 $res_names = mysql_query($query_names) or die ("query_names failed");
 $num_paper= mysql_num_rows($res_names);
-
 
 $ggc_cmd="ima/".$line[7];
 
@@ -64,7 +60,8 @@ $ggc_cmd="ima/".$line[7];
 
 <?php
 
-echo 'Reference n. '.$iiref;
+$artnum=$line[4];
+echo 'Reference n. '.$iiref." <i>(<a href=\"article.php?idart=$artnum\">gc".$artnum.'</a>)</i>';
 echo '</td></tr>';
 
 echo '<tr>';
@@ -97,6 +94,7 @@ echo '</td><td>';
 echo $line[6];
 echo "</td></tr>\n";
 
+// JournalFire link (if available)
 if ($line[11]!="")
     {
 echo '<tr><td>';
@@ -106,8 +104,7 @@ echo '<a href="'.$line[11].'">Comment this paper on JournalFire</a>';
 echo "</td></tr>\n";
     }
 
-
-// Eventuale diagramma CM
+// CM diagram (if available)
 if ($line[7]!="")
     {
 echo '<tr><td>';
@@ -117,7 +114,7 @@ echo '<img src='.$ggc_cmd.'>';
 echo "</td></tr>\n";
     }
 
-// altra URL per scaricare l'articolo...
+// Alternative URL 
 if ($line[10]!="")
     {
 echo '<tr><td>';
@@ -127,19 +124,18 @@ echo '<a href="'.$line[10].'">'.$line[10]."</a>";
 echo "</td></tr>\n";
     }
 
-// infine ecco le tags...
+// List of tags for the paper
 echo '<tr><td>';
 echo 'Tags';
 echo "</td><td>\n";
 for ($nnp=0; $nnp < $num_paper; $nnp++)
   {
     $ntag = mysql_fetch_row($res_names);
-//      echo "<b>".$ntag[0]."</b>";
         echo "<b>"."<a href=\"cluster_4.php?ggc=".urlencode($ntag[0])."\">".$ntag[0]."</a>\n";
 
       if ($nnp < $num_paper-1)
        {
-        echo ", ";
+        echo ", ";	// inserting comma, whenever needed
        }
   }
 

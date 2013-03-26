@@ -17,17 +17,12 @@ $numres = mysql_num_rows($result);
 ?>
 
 <HTML>
-
 <HEAD>
-
 <TITLE>
 <?php echo 'Gclusters :: Bibliographic item "gc'.$idart.'"'; ?>
-
 </TITLE>
-
 <meta name="author" content="Marco Castellani">
 <meta name="Keywords" content="astronomy, Milky Way, globular clusters">
-
 </HEAD>
 
 <body background="backgr2.jpg" text="#000000" vlink="#330099">
@@ -38,6 +33,7 @@ $numres = mysql_num_rows($result);
 <?php
 $iiref=0;
 if($numres==0) 
+<<<<<<< HEAD
 {
 echo '<font size="+2"><i>Sorry, no article to display! Try again :-)</i></font>';
 echo '<p>You may want to learn something about an  
@@ -48,22 +44,34 @@ echo "<p>Query processed at ";
  include 'coda.html'; 
 exit;
 }
+=======
+	{
+	echo '<font size="+2"><i>Sorry, no article to display! Try again :-)</i></font>';
+	echo '<p>You may want to learn something about an  <a href="http://www.iac.es/proyecto/sumo/project.html">
+	excellent project named SUMO</a> ...';
+	echo "<p>Query processed at ";
+	echo date("H:i, jS F");
+	echo "<br>";
+	include 'coda.html'; 
+	exit;
+	}
+>>>>>>> bfb753f170ac458b1f87b3641bb49551d266bdf2
 
 while ($line = mysql_fetch_row($result)) {
 $iiref++;
 
 $ggc_cmd="ima/".$line[7];
 
-
 $query_names = "SELECT tag FROM bibliotags WHERE paper = '$line[4]'";
 $res_names = mysql_query($query_names) or die ("query_names failed");
 $num_paper= mysql_num_rows($res_names);
 
+$lr = $line[10];	// number of visits so far
+
 ?>
 <!-- stampo i risultati su tabella -->
 
-
-<table width="90%" border=2>
+<table width="90%" border=0>
 
 <tr>
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
@@ -73,15 +81,22 @@ $num_paper= mysql_num_rows($res_names);
 
 <?php
 
+$codcol=0;
 
-echo '<tr>';
+$lr = $line[13];
+// echo $lr;
+
+// AUTHOR
+
+echo '<tr bgcolor="#CCCCCC">';
 echo '<td width="20%"> ';
 echo 'Author';
 echo '</td><td>';
 echo $line[0];
 echo "</td></tr>\n";
 
-echo '<tr><td>';
+// TITLE & URL
+echo '<tr bgcolor="#CCCC99"><td>';
 echo 'Title';
 echo '</td><td>';
 echo '<a href=';
@@ -91,21 +106,35 @@ echo $line[1];
 echo "</a>";
 echo "</td></tr>";
 
-echo "<tr><td>\n";
+// JOURNAL
+echo "<tr bgcolor='#CCCCCC'><td>\n";
 echo 'Journal';
 echo '</td><td>';
 echo $line[2];
 echo '</td></tr>';
 
-echo '<tr><td>';
+// YEAR
+echo '<tr bgcolor="#CCCC99"><td>';
 echo 'Year of publication';
 echo '</td><td>';
 echo $line[6];
 echo "</td></tr>\n";
 
+// ABSTRACT 
+if ($line[12]!="")
+    {
+echo '<tr bgcolor="#CCCC99"><td>';
+echo 'Abstract';
+echo '</td><td>';
+echo "<i>$line[12]</i>";
+echo "</td></tr>\n";
+    }
+
+
+// ACTIONS
 if ($line[11]!="")
     {
-echo '<tr><td>';
+echo '<tr bgcolor="#CCCC99"><td>';
 echo 'Actions';
 echo '</td><td>';
 echo '<a href="'.$line[11].'">Comment this paper on JournalFire</a>';
@@ -132,7 +161,7 @@ echo "</td></tr>\n";
 // echo '</td></tr>';
 //     }
 
-echo '<tr><td>';
+echo '<tr bgcolor="#CCCCCC"><td>';
 
 echo 'Tags';
 echo "</td><td>";
@@ -152,6 +181,16 @@ for ($nnp=0; $nnp < $num_paper; $nnp++)
 echo '</table><p>';
 
 }
+
+// Page counter
+
+$lrr = $lr + 1;
+echo"<p><i>This page has been visited ";
+echo "$lrr". ' times since March, 14 2013</i>';
+// echo "$line[3]";
+$lnext = $lr + 1;
+$lins = "UPDATE biblioclusters SET numvis = '$lnext' WHERE ID='$idart' LIMIT 1";
+$llput=mysql_query($lins);
 
 // Closing connection
 

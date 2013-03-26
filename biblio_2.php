@@ -110,7 +110,7 @@ $ggc_cmd="ima/".$line[7]; // locazione del file del CMD nel filesystem
 
 <?php
 $artnum=$line[4];
-//echo 'Reference n. '.$iiref.' <i>(gc'.$line[4].')</i>';
+
 echo 'Reference n. '.$iiref." <i>(<a href=\"article.php?idart=$artnum\">gc".$artnum.'</a>)</i>';
 
 echo '</td></tr>';
