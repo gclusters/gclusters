@@ -425,10 +425,6 @@ $ggc_gif=$ggcpre.$ggc_temp.".gif";		// adding gif
 @ $fp1 = fopen ($ggc_png, "r");
 @ $fp_gif = fopen ($ggc_gif, "r");
 
-
-
-// ...in lavorazione...
-
 if($fp1) 
    {								
    echo '<img src='.$ggc_png.'>';
@@ -473,22 +469,6 @@ $dss_large='&e=J2000&h=15&w=15&f=GIF';
 
 $ggc_dss_link="\"".$dss_pref.$row[39].$dss_post."\"";
 $ggc_dss_link2="\"".$dss_pref.$row[39].$dss_large."\"";
-
-/*
-if ($row[37]!="")
-{
-echo '<tr>';
-echo '<td>';
-echo '<font face="Comic Sans MS">';
-echo '<i>Credits:</i>';
-echo '</font>';
-echo '</td>';
-echo '<td>';
-echo $row[42];
-echo '</td>';
-echo "</tr>\n";
-};
-*/
 
 // ****** CREDITS *****************************************
 
