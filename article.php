@@ -33,18 +33,7 @@ $numres = mysql_num_rows($result);
 <?php
 $iiref=0;
 if($numres==0) 
-<<<<<<< HEAD
-{
-echo '<font size="+2"><i>Sorry, no article to display! Try again :-)</i></font>';
-echo '<p>You may want to learn something about an  
-<a href="http://www.iac.es/proyecto/sumo/project.html">excellent project named SUMO</a> ...';
-echo "<p>Query processed at ";
- echo date("H:i, jS F");
- echo "<br>";
- include 'coda.html'; 
-exit;
-}
-=======
+
 	{
 	echo '<font size="+2"><i>Sorry, no article to display! Try again :-)</i></font>';
 	echo '<p>You may want to learn something about an  <a href="http://www.iac.es/proyecto/sumo/project.html">
@@ -55,8 +44,7 @@ exit;
 	include 'coda.html'; 
 	exit;
 	}
->>>>>>> bfb753f170ac458b1f87b3641bb49551d266bdf2
-
+	
 while ($line = mysql_fetch_row($result)) {
 $iiref++;
 
