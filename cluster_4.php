@@ -420,19 +420,12 @@ $ggc_image=$ggcpre.$ggc_temp.".jpg";	// adding jpg
 $ggc_png=$ggcpre.$ggc_temp.".png";		// adding png
 $ggc_gif=$ggcpre.$ggc_temp.".gif";		// adding gif
 
-<<<<<<< HEAD
-@ $fp_new = fopen ($ggc_new, "r");
-@ $fp = fopen ($ggc_image, "r");
-@ $fp1 = fopen ($ggc_png, "r");
-@ $fp_gif = fopen ($ggc_gif, "r");
-=======
 @ $fp_new = fopen ($ggc_new, "r");		// simple
 @ $fp = fopen ($ggc_image, "r");		// jpg
 @ $fp1 = fopen ($ggc_png, "r");			// png
 @ $fp_gif = fopen ($ggc_gif, "r");		// gif
 
 // ...in lavorazione...
->>>>>>> bfb753f170ac458b1f87b3641bb49551d266bdf2
 
 if($fp1) 
    {								
