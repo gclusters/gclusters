@@ -21,6 +21,8 @@ $numres = mysql_num_rows($result);
 <TITLE>
 <?php
 
+
+
 if (!$numres) {
 
 // what to do in case of no bibliography or wrong cluster name
