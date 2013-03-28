@@ -1,5 +1,7 @@
 <?php
 
+// ToDo modify layout of the table, introducing alternating colours
+
 include 'conn.php';
 
 $mytext= $_GET['mytext'];
@@ -77,7 +79,7 @@ if (!$frase)
 
 ?>
 
-<tr bgcolor="yellow">
+<tr bgcolor="#CC9933">
 <td>Authors</td>
 <td>Title</td>
 <td>Year</td>
@@ -86,9 +88,23 @@ if (!$frase)
 
 <?php
 
+    $icol=1;
+
   while ($line = mysql_fetch_row($selbib)) {
 
-   print "\t<tr>\n";
+    $icol++;
+      $icol2=$icol/2;
+      if (is_int($icol2))
+      {
+
+              print "\t<tr bgcolor=\"#CCCCCC\">\n";
+          }
+      else
+          {
+              print "\t<tr bgcolor=\"#CCCC99\">\n";
+          }
+
+
    print "\t\t<td><i>".$line[0]."</i></td>\n";
    print "\t\t<td>".'<a href="article.php?idart='.$line[4].'">'.$line[1]."</td>\n";
    print "\t\t<td><i>".$line[6]."</i></td>\n";
