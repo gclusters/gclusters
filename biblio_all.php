@@ -1,5 +1,7 @@
 <?php
 
+// ToDo resize figures that are too big!
+
 include 'conn.php';
 include 'inte2.php';
 include 'columns.php';

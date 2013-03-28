@@ -1,5 +1,7 @@
 <?php
 
+// ToDo DO NOT DISPLAY hour inside "added on": day is enough !
+
 include 'conn.php';
 
 // define queries ...

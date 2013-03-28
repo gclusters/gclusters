@@ -1,7 +1,5 @@
 <?php
 
-// ToDo modify layout of the table, introducing alternating colours
-
 include 'conn.php';
 
 $mytext= $_GET['mytext'];
