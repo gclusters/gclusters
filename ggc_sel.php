@@ -6,8 +6,6 @@
 
 <?php 
 
-// fixme se le condizioni sono uguali, mostrare una sola colonna
-
 $pulldown= $_GET['pulldown'];
 $pulldown2= $_GET['pulldown2'];
 $pulldown3= $_GET['pulldown3'];
@@ -83,6 +81,14 @@ echo'</b><p>';
 
 // Printing results in HTML
 print "<table border=1>\n";
+
+print '<tr bgcolor="#e6e6fa"><td><b>cluster</b></td>';
+print "<td><b>$first_sel</b></td>";
+
+if ($pulldown!=$pulldown3) // do not show second column if are identical
+{
+    print "\t\t<td><b>$second_sel</b></td>\n"; // second value
+}
 
 while ($line = mysql_fetch_array($result)) {
 

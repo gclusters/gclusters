@@ -1,13 +1,15 @@
 <html>
-<head><title>GGCs DB - Search results</title></head>
+<head><title>GGCs DB :: Search results</title></head>
 <body background="backgr2.jpg">
 
 <?php 
-// fixme non si vede il background
+
+// ToDo cambiare layout della tabella
+// ToDo presentare tutti i numeri con le stessa quantità di cifre dopo la virgola
+
 include 'conn.php';
 include 'inte2.php'; 
 
-// recupero le variabili passate da 'form4_ggc.php'... 
 $pulldown= $_GET['pulldown'];
 $pulldown2= $_GET['pulldown2'];
 $pulldown4= $_GET['pulldown4'];
@@ -40,7 +42,6 @@ $variab[16] = 'MU_V';
 $variab[17] = 'RHO_V';
 $variab[18] = 'C';
 
-
 $rel="";
 
 if ($pulldown2== 1) 
@@ -60,8 +61,6 @@ $first_sel = $variab[$pulldown];
 // Performing SQL query
 $query = "SELECT ID,$first_sel FROM parameters where ($first_sel$rel$value_1) order by $first_sel";
 
-// echo 'query=',$query;
-
 echo'<p>';
 
 $result = mysql_query($query) or die("Query failed");
@@ -71,44 +70,35 @@ echo date("H:i, jS F");
 echo'</b>';
 echo " - ";
 
-
 $res_1 = mysql_num_rows($result);
 echo 'Number of clusters selected: ';
 echo '<font size="+1"><b>';
 echo $res_1;
-echo'</b></font><hr>';
-
+echo'</b></font><p>';
 
 // Printing results in HTML
 print "<table border=1>\n";
 
+print '<tr bgcolor="#e6e6fa"><td><b>cluster</b></td>';
+print "<td><b>$first_sel</b></td>";
+
+
 while ($line = mysql_fetch_array($result)) {
 
 print "\t<tr>\n";
-print "\t\t<td>"."<a href=\"cluster_4.php?ggc=".urlencode($line[0])."\">".$line[0]."</a></td>\n";
+print "\t\t<td>"."<a href=\"cluster_4.php?ggc=".urlencode($line[0])."\">".$line[0]."</a></td>\n"; // cluster
+$col_value=$line[1];
+print "\t\t<td>$col_value</td>\n";  // value
+print "\t</tr>\n";
 
-
-//     print "\t<tr>\n";
- 
-         $col_value=$line[1];           
-	 print "\t\t<td>$col_value</td>\n";
-     
-     print "\t</tr>\n";
  }
- print "</table>\n";
 
+print "</table>\n";
 
-// Closing connection
- 
 mysql_close($link);
-
-/* commento questo pezzo...
-
-termine pezzo commentato ... */
+include 'coda.html';
 
 ?>
-
-<?php include 'coda.html' ?>
 
 </body>
 </html>
