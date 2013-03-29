@@ -1,9 +1,9 @@
 <html>
 <head><title>GGCs DB - Search results</title></head>
-<body background="http://www.mporzio.astro.it/images/backgr2.jpg">
+<body background="backgr2.jpg">
 
 <?php 
-
+// fixme non si vede il background
 include 'conn.php';
 include 'inte2.php'; 
 

@@ -1,8 +1,12 @@
 <html>
-<head><title>Esempio connessione database</title></head>
-<body background="http://www.mporzio.astro.it/images/backgr2.jpg">
+<head><title>
+        GGCs database :: Results of your query
+</title></head>
+<body background="backgr2.jpg">
 
 <?php 
+
+// fixme se le condizioni sono uguali, mostrare una sola colonna
 
 $pulldown= $_GET['pulldown'];
 $pulldown2= $_GET['pulldown2'];
@@ -19,10 +23,9 @@ include 'inte2.php';
 
 <h1>Results of your query:</h1>
 
-
 <?php
 
-// def. delle variabili
+// parameter definitions
 
 $variab[1] = 'Gal_long';
 $variab[2] = 'Gal_lat';
@@ -57,75 +60,51 @@ if ($pulldown4== 1) $rel4= "<";
 if ($pulldown4== 2) $rel4= "=";
 if ($pulldown4== 3) $rel4= ">";
 
-
-
-
-// echo 'rel=',$rel,"<br>";
-
-
 $first_sel = $variab[$pulldown];
 $second_sel = $variab[$pulldown3];
 
 if ($radios== "radio1") $conn = 'and';
 if ($radios== "radio2") $conn = 'or';
 
-
-
-
 // Performing SQL query
-$query = "SELECT ID,$first_sel,$second_sel FROM parameters where(($first_sel$rel$value_1) $conn $second_sel$rel4$value_2) order by $first_sel";
-
-// echo 'query=',$query;
-
-echo'<p>';
-
+$query = "SELECT ID,$first_sel,$second_sel FROM parameters
+    where(($first_sel$rel$value_1) $conn $second_sel$rel4$value_2) order by $first_sel";
 $result = mysql_query($query) or die("Query failed");
-// echo '<hr>';
+
 echo "<p>Query processed at ";
 echo date("H:i, jS F");
 echo " - ";
 
-
-
-
 $res_1 = mysql_num_rows($result);
-echo 'Number of clusters selected:';
+echo 'Number of clusters selected: ';
 echo '<b>';
 echo $res_1;
-echo'</b><hr>';
-
+echo'</b><p>';
 
 // Printing results in HTML
 print "<table border=1>\n";
+
 while ($line = mysql_fetch_array($result)) {
 
      print "\t<tr>\n";
-     print "\t\t<td>"."<a href=\"cluster_4.php?ggc=".urlencode($line[0])."\">".$line[0]."</a></td>\n";
+     print "\t\t<td>"."<a href=\"cluster_4.php?ggc=".urlencode($line[0])."\">".$line[0]."</a></td>\n"; // cluster
+     $col_value=$line[1];
+     print "\t\t<td>$col_value</td>\n"; // first value
+     $col_value=$line[2];
+     if ($pulldown!=$pulldown3) // do not show second column if are identical
+     {
+ 	 print "\t\t<td>$col_value</td>\n"; // second value
+     }
+     print "\t</tr>\n";
 
-
-         $col_value=$line[1]; 
-     	 print "\t\t<td>$col_value</td>\n";
-      
-         $col_value=$line[2]; 
- 	 print "\t\t<td>$col_value</td>\n";
-        
-	 
-	 print "\t</tr>\n";
  }
+
  print "</table>\n";
 
-
-// Closing connection
- 
 mysql_close($link);
-
-/* commento questo pezzo...
-
-termine pezzo commentato ... */
+include 'coda.html'
 
 ?>
-
-<?php include 'coda.html' ?>
 
 </body>
 </html>

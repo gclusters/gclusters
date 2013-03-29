@@ -6,24 +6,18 @@
 
 <body background="backgr2.jpg" text="#000000">
 
-
 <?php 
 include 'inte2.php';
 ?>
 
-
 <h2>Search form (one condition)</h2>
-
-
 
 <p>
 <FORM METHOD=GET ACTION="ggc_sel1.php">
 
 <table>
-  <tr>
-    <td> 
-    
-
+<tr>
+<td>
 
 <select name="pulldown">
   <option value="1">Gal. longitude</option>
@@ -45,11 +39,9 @@ include 'inte2.php';
   <option value="17">Central lum. density</option>
   <option value="18">Central concentration</option>
 </select>
-     
-    
+
 </td>
-    
-<td>  
+<td>
     
 <select name="pulldown2">
   <option value="1">less than</option>
@@ -57,19 +49,15 @@ include 'inte2.php';
   <option value="3">greater than</option>
 </select>
     
-    
- </td>
+</td>
 <td>
-    
-    
-<INPUT TYPE="text" NAME="value_1" SIZE="8">    
-    
-    
+
+<INPUT TYPE="text" NAME="value_1" SIZE="8">
+
 </td>
 </tr>
 
 </table>
-
 
 <p>
 <INPUT TYPE="submit" VALUE="Send"> 
@@ -91,10 +79,8 @@ include 'inte2.php';
 <FORM METHOD=GET ACTION="ggc_sel.php">
 
 <table>
-  <tr>
-    <td> 
-    
-
+<tr>
+<td>
 
 <select name="pulldown">
   <option value="1">Gal. longitude</option>
@@ -116,26 +102,21 @@ include 'inte2.php';
   <option value="17">Central lum. density</option>
   <option value="18">Central concentration</option>
 </select>
-     
-    
+
 </td>
-    
-<td>  
+<td>
     
 <select name="pulldown2">
   <option value="1">less than</option>
   <option value="2">equal to</option>
   <option value="3">greater than</option>
 </select>
-    
-    
- </td>
+
+</td>
 <td>
-    
-    
+
 <INPUT TYPE="text" NAME="value_1" SIZE="8">    
-    
-    
+
 </td>
 </tr>
 
@@ -145,9 +126,6 @@ include 'inte2.php';
 <input type="radio" name="radios" value="radio1">and</b>
 <input type="radio" name="radios" value="radio2" checked>or</b><br>
 <p>
-
-
-<!-- seconda tabella -->
 
 <table>
 
@@ -177,13 +155,9 @@ include 'inte2.php';
   <option value="18">Central concentration</option>
 </select>
 
-<!-- input type="Submit" value="Take a Look" align="meddle"-->
 
-
-    
-     </td>
-    
-    <td>  
+   </td>
+   <td>
     
 
 <select name="pulldown4">
@@ -192,15 +166,13 @@ include 'inte2.php';
   <option value="3">greater than</option>
 </select>
 
-    </td>
-    
-   <td>
+</td>
+<td>
     
 <INPUT TYPE="text" NAME="value_2" SIZE="8">    
-        
-    
-  </td>
-  </tr>
+
+</td>
+</tr>
 </table>
 
 <p>
