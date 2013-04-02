@@ -5,8 +5,6 @@ include 'inte2.php';
 include 'columns.php';
 
 // define queries ...
-
-// ToDo inserire abstract
 // ToDo layout tabella
 
 $query_auth = "SELECT * FROM biblioclusters ORDER BY mdate DESC LIMIT 1";
@@ -65,7 +63,10 @@ $num_paper= mysql_num_rows($res_names);
 
 <tr>
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
-Latest reference added in <i>Gclusters</i>
+Latest reference added in <i>Gclusters
+        <?php
+            echo ' (gc'.$line[4].')</i>';
+        ?>
 </td>
 </tr>
 
