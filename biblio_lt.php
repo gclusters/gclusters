@@ -6,7 +6,8 @@ include 'columns.php';
 
 // define queries ...
 
-//$ggc=trim($ggc);
+// ToDo inserire abstract
+// ToDo layout tabella
 
 $query_auth = "SELECT * FROM biblioclusters ORDER BY mdate DESC LIMIT 1";
 
@@ -20,11 +21,21 @@ $numres = mysql_num_rows($result);
 <HEAD>
 
 <TITLE>
-Gclusters :: most recent bibliograpic item
+Gclusters :: most recent paper
 </TITLE>
 
 <meta name="author" content="Marco Castellani">
 <meta name="Keywords" content="astronomy, Milky Way, globular clusters">
+
+    <style type="text/css">
+        .testoblu {
+            font-family:"Book Antiqua";
+            font-style: italic;
+            color:steelblue;
+            text-align:justify;
+        }
+    </style>
+
 
 </HEAD>
 
@@ -35,7 +46,6 @@ Gclusters :: most recent bibliograpic item
 
 <?php
 $iiref=0;
-// ciclo su tutta la bibliografia di un cluster
 
 while ($line = mysql_fetch_row($result)) {
 $iiref++;
@@ -79,17 +89,29 @@ echo $line[1];
 echo "</a>";
 echo "</td></tr>";
 
-echo "<tr><td>\n";
-echo 'Journal';
-echo '</td><td>';
-echo $line[2];
-echo '</td></tr>';
 
-echo '<tr><td>';
-echo 'Year of publication';
-echo '</td><td>';
-echo $line[6];
-echo "</td></tr>\n";
+
+if ($line[12]!="")
+{
+    echo '<tr><td>';
+    echo 'Abstract';
+    echo '</td><td class="testoblu"><i>';
+    echo $line[12];
+    echo "</i></td></tr>\n";
+}
+
+    echo "<tr><td>\n";
+    echo 'Journal';
+    echo '</td><td>';
+    echo $line[2];
+    echo '</td></tr>';
+
+    echo '<tr><td>';
+    echo 'Year of publication';
+    echo '</td><td>';
+    echo $line[6];
+    echo "</td></tr>\n";
+
 
 if ($line[11]!="")
     {
@@ -100,7 +122,7 @@ echo '<a href="'.$line[11].'">Comment this paper on JournalFire</a>';
 echo "</td></tr>\n";
     }
 
-// altra URL per scaricare l'articolo...
+// alternative URL
 if ($line[10]!="")
     {
 echo '<tr><td>';

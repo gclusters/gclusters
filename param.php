@@ -9,13 +9,18 @@
 <body text="#000000" background="backgr2.jpg" link="#0000EF" vlink="#55188A" alink="#FF0000">
 
 
-<?php include "inte2.php" ?>
+<?php
+include "inte2.php";
+// ToDo cambiare layout tabella
+?>
 
 
 <p><br>
 <i>The meaning of the columns of the database is the same 
 that in the database of William E. Harris<br> 
-(values mainly come from Harris 2003 and Harris 2010, <a href="http://goo.gl/aIxZA">details here</a>)
+(at the moment, values mainly come from Harris 2003 and
+    <a href="http://www.physics.mcmaster.ca/Globular.html">Harris 2010</a>,
+    <a href="http://goo.gl/aIxZA">details here</a>)
 <p>
 Namely, the different colums give:</i>
 &nbsp;
