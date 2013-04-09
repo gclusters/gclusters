@@ -139,6 +139,45 @@ echo '<a href="'.$line[10].'">'.$line[10]."</a>";
 echo "</td></tr>\n";
     }
 
+    if ($line[7]!="")
+    {
+
+// Finding the file with the CMD ...
+
+        $ggc_cmd_new="ima/".$line[7];
+        $ggc_cmd_png=$ggc_cmd_new.'.png';
+        $ggc_cmd_gif=$ggc_cmd_new.'.gif';
+        $ggc_cmd_jpg=$ggc_cmd_new.'.jpg';
+
+// Trying to open file with various extensions ...
+
+        @ $fpp_new = fopen ($ggc_cmd_new, "r");
+        @ $fpp_png = fopen ($ggc_cmd_png, "r");
+        @ $fpp_gif = fopen ($ggc_cmd_gif, "r");
+        @ $fpp_jpg = fopen ($ggc_cmd_jpg, "r");
+
+// Choosing the 'right' file ...
+
+        if($fpp_new) {
+            $ggc_cmd=$ggc_cmd_new;	// perfetto così
+        } else if ($fpp_png) {
+            $ggc_cmd=$ggc_cmd_png;	// va bene il PNG
+        } else if ($fpp_gif) {		// va bene il GIF
+            $ggc_cmd=$ggc_cmd_gif;
+        } else if ($fpp_jpg) {
+            $ggc_cmd=$ggc_cmd_jpg;	// va bene il JPG
+
+        } else {
+            $ggc_cmd=$line[9];  // external link
+        }
+
+        echo '<tr bgcolor="#CCCC66"><td>';
+        echo 'CM diagram';
+        echo '</td><td>';
+        echo '<img src="'.$ggc_cmd.'" width="70%">';
+        echo '</td></tr>';
+        echo "\n";
+    }
 
 // if ($line[7]!="")
 //     {
