@@ -40,7 +40,11 @@ echo "<td><i>$l_visited[0]</i><br>";
 print "<a href=\"article.php?idart=".$l_visited[4]."\">".$l_visited[1]."</a>
 </td>";
 
-// 3. Number of visits
+// 3. Number of the paper
+echo "<td width=\"8%\" align=\"center\"><i>gc$l_visited[4]</i></td>";
+
+
+// 4. Number of visits
 echo '<i><td width="8%" align=center> ';
 echo $l_visited[13];
 print "</td></tr>\n";

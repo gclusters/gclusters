@@ -7,13 +7,16 @@
 <body background="backgr2.jpg" text="#000000">
 
 <?php 
-
 include 'inte2.php';
 include 'conn.php';
 
 // how many papers we have now in the DB?
-$myquery="SELECT COUNT(*) from biblioclusters";
+//$myquery="SELECT COUNT(*) from biblioclusters";
+
+$myquery = "SELECT ID from biblioclusters order by ID DESC limit 1";
 $numpa = mysql_query($myquery) or die("Huston, we have a problem...");
+
+
 
 ?>
 
@@ -42,8 +45,10 @@ $numpa = mysql_query($myquery) or die("Huston, we have a problem...");
 <input type="radio" name="radios" value="id"><i>gc (1-
 
 <?php
+
 $numer = mysql_fetch_row($numpa);
 echo $numer[0].')';
+
 ?>
 
 </i>
