@@ -1,6 +1,9 @@
 <?php
 
-// ToDo DO NOT DISPLAY hour inside "added on": day is enough !
+/*
+ToDo DO NOT DISPLAY hour inside "added on": day is enough !
+ToDo List gc number if available, with the link
+*/
 
 include 'conn.php';
 
