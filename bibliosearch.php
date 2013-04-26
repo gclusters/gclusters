@@ -7,13 +7,18 @@
 <body background="backgr2.jpg" text="#000000">
 
 <?php 
+
 include 'inte2.php';
 include 'conn.php';
 
 $myquery = "SELECT ID from biblioclusters order by ID DESC limit 1";
 $numpa = mysql_query($myquery) or die("Huston, we have a problem...");
-
-// ToDo put on the page also the range available in years
+$maxyear = "SELECT MAX(annoarti) from biblioclusters";
+$minyear = "SELECT MIN(annoarti) from biblioclusters";
+$maxy = mysql_query($maxyear) or die("Huston, we have a problem...");
+$miny = mysql_query($minyear) or die("Huston, we have a problem...");
+$maxyy = mysql_fetch_row($maxy);
+$minyy = mysql_fetch_row($miny);
 
 ?>
 
@@ -40,6 +45,14 @@ $numpa = mysql_query($myquery) or die("Huston, we have a problem...");
 <input type="radio" name="radios" value="ti" checked>Title
 <input type="radio" name="radios" value="au">Authors
 <input type="radio" name="radios" value="yr">Year
+
+<?php
+
+    echo "($minyy[0] - $maxyy[0])";
+
+?>
+
+
 <input type="radio" name="radios" value="id"><i>gc (1-
 
 <?php

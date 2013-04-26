@@ -1,5 +1,7 @@
 <?php
 
+// ToDo include kind of query on the page
+
 include 'conn.php';
 
 $mytext= $_GET['mytext'];
