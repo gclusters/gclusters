@@ -10,13 +10,10 @@
 include 'inte2.php';
 include 'conn.php';
 
-// how many papers we have now in the DB?
-//$myquery="SELECT COUNT(*) from biblioclusters";
-
 $myquery = "SELECT ID from biblioclusters order by ID DESC limit 1";
 $numpa = mysql_query($myquery) or die("Huston, we have a problem...");
 
-
+// ToDo put on the page also the range available in years
 
 ?>
 
@@ -42,6 +39,7 @@ $numpa = mysql_query($myquery) or die("Huston, we have a problem...");
 
 <input type="radio" name="radios" value="ti" checked>Title
 <input type="radio" name="radios" value="au">Authors
+<input type="radio" name="radios" value="yr">Year
 <input type="radio" name="radios" value="id"><i>gc (1-
 
 <?php

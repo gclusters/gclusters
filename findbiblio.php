@@ -17,6 +17,9 @@ case "id":
 	$myquery = "SELECT * FROM biblioclusters where ID='$mytext'";
 	$frase="1";
 	break;
+    case "yr":
+    $myquery = "SELECT * FROM biblioclusters where annoarti='$mytext'";
+    break;
 default:
 	$myquery = "SELECT * FROM biblioclusters where title like '%$mytext%'";
 	$frase="0";
