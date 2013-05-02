@@ -1,5 +1,7 @@
 <?php
 
+// ToDo aggiungere la data immissione paper
+
 include 'conn.php';
 include 'inte2.php';
 include 'columns.php';
@@ -104,8 +106,8 @@ echo '</td></tr>';
 // YEAR
 echo '<tr bgcolor="#CCCC99"><td>';
 echo 'Year of publication';
-echo '</td><td>';
-echo $line[6];
+echo '</td><td><b>';
+echo $line[6]."</b> <i>(on gclusters from $line[5] )</i>";
 echo "</td></tr>\n";
 
 // ABSTRACT 
