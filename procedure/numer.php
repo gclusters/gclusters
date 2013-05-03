@@ -19,15 +19,18 @@ catch (PDOException $e)
     exit();
 }
 
-$sql = "select num,linkdate from linkspage order by linkdate DESC";
+$sql = "select * from linkspage order by linkdate DESC";
 $result = $pdo -> query($sql);
 
-$numy == 0;
+$numy = 0;
 
 while ($row = $result ->fetch())
 {
     $numy++;
-echo '<br>'.$row['linkdate'];
-//    insert linkscluster ($num) VALUES ($numy);
+    $linky=$row['linkname'];
+    // echo '<br>'.$numy.' '.$linky;
+    $sql2="update linkspage set num=$numy where linkname=$linky";
+    //echo $sql2.'<br>';
+    $res2 = $pdo->query($sql2);
 }
 
