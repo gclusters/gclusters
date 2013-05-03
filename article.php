@@ -1,7 +1,5 @@
 <?php
 
-// ToDo aggiungere la data immissione paper
-
 include 'conn.php';
 include 'inte2.php';
 include 'columns.php';

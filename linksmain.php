@@ -14,7 +14,7 @@ Links to be listed in this page can be submitted by any user of the GGC-DB (see 
 
 include 'conn.php';
 
-$querylink = "SELECT * FROM linkspage ORDER BY linkdate DESC LIMIT 10";
+$querylink = "SELECT * FROM linkspage ORDER BY linkdate DESC LIMIT 20";
 $result = mysql_query($querylink) or die("Query failed");
 $res_1 = mysql_num_rows($result);
 
