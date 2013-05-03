@@ -29,7 +29,7 @@ while ($row = $result ->fetch())
     $numy++;
     $linky=$row['linkname'];
     // echo '<br>'.$numy.' '.$linky;
-    $sql2="update linkspage set num=$numy where linkname=$linky";
+    $sql2="update linkspage set num=$numy where linkname=\"$linky\"";
     //echo $sql2.'<br>';
     $res2 = $pdo->query($sql2);
 }
