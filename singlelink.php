@@ -21,7 +21,7 @@ $numres = mysql_num_rows($result);
 <HTML>
 <HEAD>
 <TITLE>
-<?php echo 'Gclusters :: Link item "lk'.$idart.'"'; ?>
+<?php echo 'Gclusters :: Link item "gl'.$idart.'"'; ?>
 </TITLE>
 <meta name="author" content="Marco Castellani">
 <meta name="Keywords" content="astronomy, Milky Way, globular clusters">
@@ -60,7 +60,7 @@ while ($line = mysql_fetch_row($result)) {
 
 <tr>
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
-<?php echo 'Link ID: <i>lk'.$idart.'</i>'; ?>
+<?php echo 'Link ID: <i>gl'.$idart.'</i>'; ?>
 </td>
 </tr>
 
@@ -94,11 +94,16 @@ echo '</td></tr>';
 // URL
 echo '<tr bgcolor="#CCCC99"><td>';
 echo 'URL';
-echo '</td><td><b>';
-echo $line[3]."</b>";
+echo '</td><td>';
+echo '<a href=';
+echo $line[3];
+echo ">";
+echo $line[3];
+echo '</a> <a href="'.$line[7].'">'."[Cached version here]</a>";
 echo "</td></tr>\n";
 
 // CACHE COPY
+/*
 if ($line[7]!="")
     {
 echo '<tr bgcolor="#CCCC99"><td>';
@@ -107,6 +112,7 @@ echo '</td><td>';
 echo "<i>$line[7]</i>";
 echo "</td></tr>\n";
     }
+*/
 
 /**
 // ACTIONS
