@@ -1,5 +1,7 @@
 <?php
 
+// ToDo inserire verifica automatica validità del link
+
 include 'conn.php';
 include 'inte2.php';
 include 'columns.php';
@@ -45,14 +47,20 @@ if($numres==0)
 	exit;
 	}
 
+while ($line = mysql_fetch_row($result)) {
+
+
 ?>
+
+
+
 <!-- stampo i risultati su tabella -->
 
 <table width="90%" border=0>
 
 <tr>
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
-<?php echo 'Article ID: <i>gc'.$idart.'</i>'; ?>
+<?php echo 'Link ID: <i>lk'.$idart.'</i>'; ?>
 </td>
 </tr>
 
@@ -60,54 +68,47 @@ if($numres==0)
 
 $codcol=0;
 
-$lr = $line[13];
-// echo $lr;
-
-// AUTHOR
+// CLUSTER
 
 echo '<tr bgcolor="#CCCCCC">';
 echo '<td width="20%"> ';
-echo 'Author';
+echo 'Cluster';
 echo '</td><td>';
 echo $line[0];
 echo "</td></tr>\n";
 
-// TITLE & URL
+// NAME
 echo '<tr bgcolor="#CCCC99"><td>';
-echo 'Title';
+echo 'Name';
 echo '</td><td>';
-echo '<a href=';
-echo $line[3];
-echo ">";
 echo $line[1];
-echo "</a>";
 echo "</td></tr>";
 
-// JOURNAL
+// DESCRIPTION
 echo "<tr bgcolor='#CCCCCC'><td>\n";
-echo 'Journal';
+echo 'Description';
 echo '</td><td>';
 echo $line[2];
 echo '</td></tr>';
 
-// YEAR
+// URL
 echo '<tr bgcolor="#CCCC99"><td>';
-echo 'Year of publication';
+echo 'URL';
 echo '</td><td><b>';
-echo $line[6]."</b> <i>(on gclusters from $line[5] )</i>";
+echo $line[3]."</b>";
 echo "</td></tr>\n";
 
-// ABSTRACT 
-if ($line[12]!="")
+// CACHE COPY
+if ($line[7]!="")
     {
 echo '<tr bgcolor="#CCCC99"><td>';
-echo 'Abstract';
+echo 'Cache Copy';
 echo '</td><td>';
-echo "<i>$line[12]</i>";
+echo "<i>$line[7]</i>";
 echo "</td></tr>\n";
     }
 
-
+/**
 // ACTIONS
 if ($line[11]!="")
     {
@@ -208,7 +209,8 @@ $lnext = $lr + 1;
 $lins = "UPDATE biblioclusters SET numvis = '$lnext' WHERE ID='$idart' LIMIT 1";
 $llput=mysql_query($lins);
 
-// Closing connection
+*/
+}
 
 mysql_close($link);
 
