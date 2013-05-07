@@ -7,8 +7,15 @@
  * To change this template use File | Settings | File Templates.
  */
 
+/**
 try{
     $pdo = new PDO ('mysql:host=localhost;dbname=globularclusters','root','root');
+}
+
+*/
+
+try{
+    $pdo = new PDO ('mysql:host=localhost;dbname=my_gclusters','gclusters','');
 }
 
 catch (PDOException $e)

@@ -21,7 +21,7 @@ $numres = mysql_num_rows($result);
 <HTML>
 <HEAD>
 <TITLE>
-<?php echo 'Gclusters :: Link item "gl'.$idart.'"'; ?>
+<?php echo 'Gclusters :: Link item "glk'.$idart.'"'; ?>
 </TITLE>
 <meta name="author" content="Marco Castellani">
 <meta name="Keywords" content="astronomy, Milky Way, globular clusters">
@@ -38,8 +38,8 @@ if($numres==0)
 
 	{
 	echo '<font size="+2"><i>Sorry, no link to display! Try again :-)</i></font>';
-	echo '<p>You may want to learn something about an  <a href="http://www.iac.es/proyecto/sumo/project.html">
-	excellent project named SUMO</a> ...';
+	echo '<p>You may want to give a <i>like</i> to our Facebook page: just follow
+	<a href="http://facebook.com/gclusters">this link</a>!';
 	echo "<p>Query processed at ";
 	echo date("H:i, jS F");
 	echo "<br>";
@@ -60,7 +60,7 @@ while ($line = mysql_fetch_row($result)) {
 
 <tr>
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
-<?php echo 'Link ID: <i>gl'.$idart.'</i>'; ?>
+<?php echo 'Link ID: <i>glk'.$idart.'</i>'; ?>
 </td>
 </tr>
 
@@ -87,8 +87,8 @@ echo "</td></tr>";
 // DESCRIPTION
 echo "<tr bgcolor='#CCCCCC'><td>\n";
 echo 'Description';
-echo '</td><td>';
-echo $line[2];
+echo '</td><td><i>';
+echo $line[2].'</i>';
 echo '</td></tr>';
 
 // URL
