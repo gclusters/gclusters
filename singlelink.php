@@ -37,7 +37,7 @@ $iiref=0;
 if($numres==0) 
 
 	{
-	echo '<font size="+2"><i>Sorry, no link to display! Try again :-)</i></font>';
+	echo '<font size="+2"><i>Sorry, no link to display!</i></font>';
 	echo '<p>You may want to give a <i>like</i> to our Facebook page: just follow
 	<a href="http://facebook.com/gclusters">this link</a>!';
 	echo "<p>Query processed at ";
@@ -99,7 +99,11 @@ echo '<a href=';
 echo $line[3];
 echo ">";
 echo $line[3];
-echo '</a> <a href="'.$line[7].'">'."[Cached version here]</a>";
+echo '</a>';
+if ($line[7])
+{
+  echo ' <a href="'.$line[7].'">'."[Cached version here]</a>";
+}
 echo "</td></tr>\n";
 
 // CACHE COPY
