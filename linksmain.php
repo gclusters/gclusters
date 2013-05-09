@@ -12,6 +12,8 @@ Links to be listed in this page can be submitted by any user of the GGC-DB (see 
 
 <?php
 
+// ToDo inserire i... link al singolo link!!
+
 include 'conn.php';
 
 $querylink = "SELECT * FROM linkspage ORDER BY linkdate DESC LIMIT 20";
@@ -34,10 +36,13 @@ while ($line = mysql_fetch_row($result)) {
 
 print "\t<tr bgcolor=\"#FFCC99\">\n";
 
-// riga con solo il nome del cluster
+// riga con il nome del cluster
 
          $col_value=$line[1];
-         print "\t\t<b><td colspan=3><font size=\"+2\">$line[0]</font>  - Added on $line[5]</td></b></tr>\n";
+         print "\t\t<td colspan=3><b>$line[0]</b>  - Added on $line[5]";
+         print " - <i><a href=\"singlelink.php?idart=$line[6]\">glink$line[6]</a></i></td>";
+         print "</tr>\n";
+
 
 // il titolo del link (a nuova riga)
 
