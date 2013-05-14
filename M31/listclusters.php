@@ -8,6 +8,8 @@
  */
 
 include 'conn-m31.php';
+include 'header.html';
+
 $query="select * from object";
 
 $result = mysql_query($query) or die("Query failed...");
