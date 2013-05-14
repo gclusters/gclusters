@@ -36,7 +36,7 @@ $nvisited=1;
 while ($l_visited = mysql_fetch_array($res_visited)){
 
 echo '<tr><td align=center><i>';
-echo $nvisited;
+echo '#'.$nvisited;
 echo '</i></td>';
 
 echo '<td width=70%><center>';
