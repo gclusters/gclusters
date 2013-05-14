@@ -1,12 +1,16 @@
 <html>
-<head><title>GGCs database: "Top 25"</title></head>
+<head><title>GGCs database: "Top 25 clusters"</title></head>
 <body background="backgr2.jpg" vlink="#3333CC">
 
 
 <?php include 'inte2.php'?>
-<center>
-<h2>The GGC-DB "Top 25":</h2>
-<h3>our most popular pages (according to the total number of visit)</h3>
+<center><h3><i>
+    Enjoy a view of our most popular clusters
+    (<a href="vlinks.php">links</a>,
+    <a href="vbiblio.php">articles</a>)
+
+    <br> according to the total number of visit</i></h3>
+
 <p>
 
 <?php

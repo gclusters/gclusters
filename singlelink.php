@@ -24,7 +24,7 @@ $numres = mysql_num_rows($result);
 <HTML>
 <HEAD>
 <TITLE>
-<?php echo 'Gclusters :: Link item "glk'.$idart.'"'; ?>
+<?php echo 'Gclusters :: Link Item "lk'.$idart.'"'; ?>
 </TITLE>
 <meta name="author" content="Marco Castellani">
 <meta name="Keywords" content="astronomy, Milky Way, globular clusters">
@@ -61,7 +61,7 @@ while ($line = mysql_fetch_row($result)) {
 
 <tr>
 <td colspan=2 align=CENTER BGCOLOR="#99CCFF"><b>
-<?php echo 'Link ID: <i>glk'.$idart.'</i>'; ?>
+<?php echo 'Link ID: <i>lk'.$idart.'</i>'; ?>
 </td>
 </tr>
 

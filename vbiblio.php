@@ -4,7 +4,13 @@
 
 <?php include 'inte2.php'?>
 <center>
-<h3><i>Enjoy a view of our most popular papers<br> (according to the total number of visit)</i></h3>
+<h3><i>
+        Enjoy a view of our most popular papers
+        (<a href="vlinks.php">links</a>,
+        <a href="vclusters.php">clusters</a>)
+
+        <br> according to the total number of visit</i></h3>
+</i></h3>
 <p>
 
 <?php
