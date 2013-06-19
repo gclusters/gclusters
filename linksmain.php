@@ -12,8 +12,6 @@ Links to be listed in this page can be submitted by any user of the GGC-DB (see 
 
 <?php
 
-// ToDo inserire i... link al singolo link!!
-
 include 'conn.php';
 
 $querylink = "SELECT * FROM linkspage ORDER BY linkdate DESC LIMIT 20";
