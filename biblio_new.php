@@ -4,7 +4,7 @@ include 'conn.php';
 include 'inte2.php';
 include 'columns.php';
 
-//ToDo sistemare il display delle figure, va inserito il blocco "classico" per i vari tipi di files immagine
+//ToDo sistemare il display delle figure, va inserito il blocco "classico" (da biblio_2.php ad esempio)
 
 // define queries ...
 $query_auth = "SELECT * FROM biblioclusters ORDER BY biblio_date DESC LIMIT 5";

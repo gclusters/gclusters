@@ -1,8 +1,7 @@
 <?php
 
 /*
-ToDo inserire verifica automatica validità del link
-ToDo inserire display delle figure (quando ci sono)
+ToDo implementare trattamento figure troppo grosse
 */
 
 include 'conn.php';
@@ -92,6 +91,7 @@ echo '</td><td><i>';
 echo $line[2].'</i>';
 echo '</td></tr>';
 
+
 // URL
 echo '<tr bgcolor="#CCCC99"><td>';
 echo 'URL';
@@ -106,6 +106,15 @@ if ($line[7])
   echo ' <a href="'.$line[7].'">'."[Cached version here]</a>";
 }
 echo "</td></tr></table>\n";
+
+@ $fpweb = fopen ($line[4], "r");
+
+if ($fpweb)
+{
+    echo '<p><table border=2><tr><td>';
+    echo '<img src="'.$line[4].'">';
+    echo '</table></p>';
+}
 
 
 // Page counter
