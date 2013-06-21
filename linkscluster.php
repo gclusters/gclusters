@@ -16,18 +16,19 @@ $querylink = "SELECT * FROM linkspage WHERE ID like '%$ggc%' ORDER BY linkdate D
 $result = mysql_query($querylink) or die("Some problems in the database. Please try again later...");
 $res_1 = mysql_num_rows($result);
 
-/*
+
 echo 'Number of links available for this cluster: ';
 echo '<font size="+1"><b>';
 echo $res_1;
 echo "<p>";
-*/
+
 
 $vallink = 0;
 print "<table border=3>\n";
 while ($line = mysql_fetch_row($result)) {
 
-@ $fpweb = fopen ($line[3], "r");
+// @ $fpweb = fopen ($line[3], "r");
+    $fpweb=1;
 
     if ($fpweb)
     {
@@ -87,7 +88,7 @@ while ($line = mysql_fetch_row($result)) {
 	   print "</table>\n";
 
 
-       echo "<p><i>Valid links: $vallink</i>";
+      // echo "<p><i>Valid links: $vallink</i>";
 // Closing connection
 
 mysql_close($link);
