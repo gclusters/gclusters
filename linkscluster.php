@@ -4,6 +4,9 @@
 
 <?php 
 
+// ToDo inserire link alla pagina singola...
+// ToDo inserire box per commenti...
+
 include 'inte2.php';
 include 'conn.php';
  
@@ -13,15 +16,24 @@ $querylink = "SELECT * FROM linkspage WHERE ID like '%$ggc%' ORDER BY linkdate D
 $result = mysql_query($querylink) or die("Some problems in the database. Please try again later...");
 $res_1 = mysql_num_rows($result);
 
+/*
 echo 'Number of links available for this cluster: ';
 echo '<font size="+1"><b>';
 echo $res_1;
 echo "<p>";
+*/
 
+$vallink = 0;
 print "<table border=3>\n";
 while ($line = mysql_fetch_row($result)) {
 
-print "\t<tr>\n";
+@ $fpweb = fopen ($line[3], "r");
+
+    if ($fpweb)
+    {
+
+     $vallink == $vallink++;
+     print "\t<tr>\n";
 
 
 /*
@@ -32,6 +44,9 @@ print "\t<tr>\n";
  3. address
  4. image
  5. date
+ 6. num link
+ 7. cache link
+ 8. numvis
 */
 
 
@@ -68,11 +83,29 @@ print "\t<tr>\n";
        print "\t</tr>\n";
 
 }
+}
 	   print "</table>\n";
 
+
+       echo "<p><i>Valid links: $vallink</i>";
 // Closing connection
 
 mysql_close($link);
+
+if($vallink<$res_1)
+{
+
+    // sending a message to the admin
+    /*
+    $to = 'm.castellani@gmail.com';
+    $subject = 'gclusters: broken link';
+    $message = 'Hello! You may want to know that there are broken links in '
+        .$message=$line[0];
+    $message = wordwrap($message, 70);
+
+    mail($to, $subject, $message);
+    */
+}
 
 ?>
 
