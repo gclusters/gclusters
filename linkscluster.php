@@ -4,7 +4,7 @@
 
 <?php 
 
-// ToDo inserire link alla pagina singola...
+// ToDo inserire link alla pagina singola (e numero d'ordine della risorsa) ...
 // ToDo inserire box per commenti...
 
 include 'inte2.php';
@@ -48,6 +48,7 @@ while ($line = mysql_fetch_row($result)) {
  6. num link
  7. cache link
  8. numvis
+ 9. credits
 */
 
 

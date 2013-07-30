@@ -60,7 +60,9 @@ print "\t<tr bgcolor=\"#FFCC99\">\n";
 
 	if  ($line[4]!="")
 	{
-       print "\t\t<td width=\"10%\">"."<a href=".$line[4].">"."<img src=\"".$col_value.'" width="100%" border="0"></a>'."</td>\n";
+       print "\t\t<td width=\"10%\">"."<a href=".$line[4].">".
+           "<img src=\"".$col_value.'" width="100%" border="0"></a>'.
+           "</td>\n";
 	}
 
 	print "\t</tr>\n";

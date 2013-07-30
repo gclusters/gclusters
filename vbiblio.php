@@ -51,8 +51,13 @@ echo "<td width=\"8%\" align=\"center\"><i>gc$l_visited[4]</i></td>";
 
 
 // 4. Number of visits
+
+if($nvisited==1) $maxvis=$l_visited[13];
+$popindex = $l_visited[13]/$maxvis;
+
 echo '<i><td width="8%" align=center> ';
-echo $l_visited[13];
+// echo $l_visited[13];
+echo round($l_visited[13]/$maxvis*100,2);
 print "</td></tr>\n";
 $nvisited++;
 

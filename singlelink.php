@@ -2,6 +2,7 @@
 
 /*
 ToDo implementare trattamento figure troppo grosse
+ToDo sotto la figura, titolo + crediti immagine
 */
 
 include 'conn.php';
