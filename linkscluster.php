@@ -1,5 +1,5 @@
 <html>
-<head><title>GGCs database - Links for cluster</title></head>
+<head><title>GGCs database :: Links for cluster</title></head>
 <body background="backgr2.jpg">
 
 <?php 
@@ -30,12 +30,13 @@ while ($line = mysql_fetch_row($result)) {
 // @ $fpweb = fopen ($line[3], "r");
     $fpweb=1;
 
+/*
     if ($fpweb)
     {
 
      $vallink == $vallink++;
      print "\t<tr>\n";
-
+*/
 
 /*
  Table 'linkspage': 	
@@ -52,40 +53,49 @@ while ($line = mysql_fetch_row($result)) {
 */
 
 
-// name of the link
+        print "\t<tr bgcolor=\"#FFCC99\">\n";
 
-     $col_value=$line[1];
-	 print "\t\t<td width=\"40%\"><font face=\"Comic Sans MS\">"."<a href=".$line[3].">".
-	 $col_value."</a></font></td>\n";
+// riga con il NOME del cluster
 
-// description of the link
+        $col_value=$line[1];
+        print "\t\t<td colspan=3>";
+        print "<i><a href=\"singlelink.php?idart=$line[6]\">glink$line[6]</a>";
+        print " - Added on $line[5]</i></td>";
+        print "</tr>\n";
 
-	 $col_value=$line[2];
-         if  ($line[4]!="")
-           {
-           	 print "\t\t<td width=\"40%\"><font face=\"Comic Sans MS\">$col_value</font></td>\n";
-           }
-         else
-          {
-           	 print "\t\t<td colspan=2 width=\"40%\"><font face=\"Comic Sans MS\">$col_value</font></td>\n";
-          }
-          
-// display image (if it is present)
 
-        $col_value=$line[4];
-		if  ($line[4]!="")
+// il TITOLO del link (a nuova riga)
+
+        print "\t\t<tr><td width=\"40%\">"."<font face=\"Comic Sans MS\">
+        <a href=".$line[3].">".$col_value."</a>
+        </font></td>\n";
+
+// DESCRIZIONE del link
+
+        $col_value=$line[2];
+        if  ($line[4]!="") // c'e' o non c'e' la figura....
         {
-         print "\t\t<td width=\"40%\">"."<a href=".$line[4].">".
-         "<img src=\"".$col_value.'" width="100%" border="0"></a>'."</td>\n";
-		}
+            print "\t\t<td width=\"50%\"><font face=\"Comic Sans MS\" size='-1'><i>$col_value</i></font></td>\n";
+        } else  {
+            print "\t\t<td colspan=2><font face=\"Comic Sans MS\" size='-1'><i>$col_value</i></font></td>\n";
+        }
 
-// data di inserimento del link
-	   $col_value=$line[5];
-       print "\t\t<td width=\"40%\"><i>".$col_value."</i></td>\n";
-       print "\t</tr>\n";
+// IMMAGINE (se presente)
+        $col_value=$line[4];
 
-}
-}
+        if  ($line[4]!="")
+        {
+            print "\t\t<td width=\"10%\">"."<a href=".$line[4].">".
+                "<img src=\"".$col_value.'" width="100%" border="0"></a>'.
+                "</td>\n";
+        }
+
+        print "\t</tr>\n";
+
+    }
+
+
+
 	   print "</table>\n";
 
 
@@ -116,6 +126,6 @@ if($vallink<$res_1)
 <a href="admin/addlink.php">Submit a link</a> for this cluster.
 </tr></td></table>
 
-<?php include 'coda.html' ?>
+<?php include 'coda.html'; ?>
 </body>
 </html>
