@@ -1,5 +1,5 @@
 <html>
-<head><title>GGCs database - Links for cluster</title></head>
+<head><title>GGCs database :: Most recent links</title></head>
 <body background="backgr2.jpg">
 
 <?php include 'inte2.php'?>
@@ -11,8 +11,6 @@ Links to be listed in this page can be submitted by any user of the GGC-DB (see 
 <p>
 
 <?php
-
-// ToDo inserire i... link al singolo link!!
 
 include 'conn.php';
 
@@ -29,14 +27,13 @@ print "<table border=3>\n";
 
 ?>
 
-
 <?php
 
 while ($line = mysql_fetch_row($result)) {
 
 print "\t<tr bgcolor=\"#FFCC99\">\n";
 
-// riga con il nome del cluster
+// riga con il NOME del cluster
 
          $col_value=$line[1];
          print "\t\t<td colspan=3><b>$line[0]</b>  - Added on $line[5]";
@@ -44,11 +41,11 @@ print "\t<tr bgcolor=\"#FFCC99\">\n";
          print "</tr>\n";
 
 
-// il titolo del link (a nuova riga)
+// il TITOLO del link (a nuova riga)
 
 	 print "\t\t<tr><td width=\"40%\">"."<a href=".$line[3].">".$col_value."</a></td>\n";
 
-// descrizione del link
+// DESCRIZIONE del link
 
 	 $col_value=$line[2];
          if  ($line[4]!="") // c'e' o non c'e' la figura....
@@ -57,12 +54,15 @@ print "\t<tr bgcolor=\"#FFCC99\">\n";
          } else  {
          print "\t\t<td colspan=2><i>$col_value</i></td>\n";
           }
-// immagine (se presente)
+
+// IMMAGINE (se presente)
         $col_value=$line[4];
 
 	if  ($line[4]!="")
 	{
-       print "\t\t<td width=\"10%\">"."<a href=".$line[4].">"."<img src=\"".$col_value.'" width="100%" border="0"></a>'."</td>\n";
+       print "\t\t<td width=\"10%\">"."<a href=".$line[4].">".
+           "<img src=\"".$col_value.'" width="100%" border="0"></a>'.
+           "</td>\n";
 	}
 
 	print "\t</tr>\n";
@@ -76,7 +76,6 @@ print "</table>\n";
 mysql_close($link);
 
 ?>
-
 
 
 <p>

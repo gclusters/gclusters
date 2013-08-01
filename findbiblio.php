@@ -110,7 +110,10 @@ if (!$frase)
 
    print "\t\t<td><i>".$line[0]."</i></td>\n";
    print "\t\t<td>".'<a href="article.php?idart='.$line[4].'">'.$line[1]."</td>\n";
-   print "\t\t<td><i>".$line[6]."</i></td>\n";
+
+//   print "\t\t<td><i>".$line[6]."</i></td>\n";
+   print"\t\t<td><i><a href=\"findbiblio.php?mytext=".$line[6]."&radios=yr\">".$line[6].'</a></i>';
+
    print "\t\t<td><i>gc".$line[4]."</i></td>\n";
 
    print "\t</tr>\n";

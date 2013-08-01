@@ -4,6 +4,8 @@ include 'conn.php';
 include 'inte2.php';
 include 'columns.php';
 
+//ToDo sistemare il display delle figure, va inserito il blocco "classico" (da biblio_2.php ad esempio)
+
 // define queries ...
 $query_auth = "SELECT * FROM biblioclusters ORDER BY biblio_date DESC LIMIT 5";
 $result = mysql_query($query_auth) or die("Query failed");
@@ -26,7 +28,7 @@ Gclusters :: Selected bibliography
 
 <center><br>
 <b>Selected bibliography and CMDs</b>
-<p>(A list of papers is also available via the <i>CiteULike</i> group 
+<p>(A list of papers is also available via our <i>CiteULike</i> group
 <a href="http://www.citeulike.org/groupfunc/6906/home">Stellar Clusters</a>)
 <p>
 <br>
