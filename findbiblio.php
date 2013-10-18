@@ -21,6 +21,7 @@ case "id":
 	break;
     case "yr":
     $myquery = "SELECT * FROM biblioclusters where annoarti='$mytext'";
+    $yearsel=1;
     break;
 default:
 	$myquery = "SELECT * FROM biblioclusters where title like '%$mytext%'";
@@ -110,10 +111,14 @@ if (!$frase)
 
    print "\t\t<td><i>".$line[0]."</i></td>\n";
    print "\t\t<td>".'<a href="article.php?idart='.$line[4].'">'.$line[1]."</td>\n";
-
-//   print "\t\t<td><i>".$line[6]."</i></td>\n";
-   print"\t\t<td><i><a href=\"findbiblio.php?mytext=".$line[6]."&radios=yr\">".$line[6].'</a></i>';
-
+   if($yearsel) // I can display the link to wikipedia, for the year
+   {
+     print"\t\t<td><i><a href=\"http://en.wikipedia.org/wiki/".$line[6].'">'.$line[6].'</a></i>';
+   }
+   else         // I display the link to the list of paper in that year
+   {
+     print"\t\t<td><i><a href=\"findbiblio.php?mytext=".$line[6]."&radios=yr\">".$line[6].'</a></i>';
+   }
    print "\t\t<td><i>gc".$line[4]."</i></td>\n";
 
    print "\t</tr>\n";
