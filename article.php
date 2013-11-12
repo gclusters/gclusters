@@ -125,7 +125,7 @@ if ($line[11]!="")
 echo '<tr bgcolor="#CCCC99"><td>';
 echo 'Actions';
 echo '</td><td>';
-echo '<a href="'.$line[11].'">Comment this paper on JournalFire</a>';
+echo '<a href="'.$line[11].'">See this paper on Mendeley</a>';
 echo "</td></tr>\n";
     }
 
