@@ -1,5 +1,5 @@
 <html>
-<head><title>GGCs database: "Top 25 papers"</title></head>
+<head><title>GGCs database: "gclusters :: Our Top Ten"</title></head>
 <body background="backgr2.jpg" vlink="#3333CC">
 
 <?php include 'inte2.php'?>
@@ -144,7 +144,8 @@ $nvisited++;
 
          // 4. Number of visits
          echo '<i><td width="8%" align=center> ';
-         echo $li_visited[8];
+         if($llvisited==1) $maxvis=$li_visited[8];
+         echo round($li_visited[8]/$maxvis*100,1);
 
          print "</td></tr>\n";
 
@@ -154,8 +155,9 @@ $nvisited++;
 
     </table>
 
-
-
+<p>
+The column on the righ shows our "popularity index", which is the total number of visits normalized to a max of 100.
+</p>
 
 
 <?php include 'coda.html' ?>
