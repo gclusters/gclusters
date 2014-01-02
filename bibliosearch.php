@@ -44,6 +44,7 @@ $minyy = mysql_fetch_row($miny);
 
 <input type="radio" name="radios" value="ti" checked>Title
 <input type="radio" name="radios" value="au">Authors
+<input type="radio" name="radios" value="abs">Abstract
 <input type="radio" name="radios" value="yr">Year
 
 <?php
@@ -54,12 +55,9 @@ $minyy = mysql_fetch_row($miny);
 
 
 <input type="radio" name="radios" value="id"><i>gc (1-
-
 <?php
-
 $numer = mysql_fetch_row($numpa);
 echo $numer[0].')';
-
 ?>
 
 </i>

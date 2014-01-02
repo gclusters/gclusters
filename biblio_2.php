@@ -21,8 +21,6 @@ $numres = mysql_num_rows($result);
 <TITLE>
 <?php
 
-
-
 if (!$numres) {
 
 // what to do in case of no bibliography or wrong cluster name
@@ -123,6 +121,7 @@ echo '</td><td>';
 echo $line[0];
 echo '</td></tr>';
 echo "\n";
+
 echo '<tr><td>';
 echo 'Title';
 echo '</td><td>';
@@ -133,8 +132,19 @@ echo "\n";
 echo $line[1];
 echo "</a>";
 echo "\n";
-echo '</td></tr><tr><td>';
+echo '</td></tr>';
 echo "\n";
+
+if ($line[12]!=""){
+$partabs = substr($line[12],0,240);
+echo '<tr><td>';
+echo 'Abstract';
+echo '</td><td>';
+echo "<i>$partabs...</i>";
+echo '</td></tr>';
+}
+
+echo '<tr><td>';
 echo 'Journal';
 echo '</td><td>';
 echo $line[2];
