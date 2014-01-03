@@ -17,6 +17,10 @@ Selected papers related to our Globular Clusters system
 include 'conn.php';
 
 // Performing SQL query
+
+// modificare: selezionare solo quegli articoli in biblioclusters il cui tag dentro
+// bibliotags è "history"
+
 $query = "SELECT authors,title,journal,annoarti,adslink FROM bibliomain 
 ORDER BY annoarti DESC";
 
