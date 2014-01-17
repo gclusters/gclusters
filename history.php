@@ -1,5 +1,5 @@
 <html>
-<head><title>GGCs database: bibliography</title></head>
+<head><title>GGCs database: historical bibliography</title></head>
 <body background="backgr2.jpg" vlink="#3333CC">
 
 <?php include 'inte2.php' ?>
@@ -8,7 +8,6 @@
 <table border=0><tr><td><i>
 Selected papers related to our Globular Clusters system
 <br>
-(<i>preprints</i> are listed in <i>italic</i>)
 </i></td></tr></table>
 <p>
 
@@ -18,11 +17,8 @@ include 'conn.php';
 
 // Performing SQL query
 
-// modificare: selezionare solo quegli articoli in biblioclusters il cui tag dentro
-// bibliotags è "history"
-
-$query = "SELECT authors,title,journal,annoarti,adslink FROM bibliomain 
-ORDER BY annoarti DESC";
+$query = "SELECT authors,title,journal,annoarti,biblioclusters.ID FROM biblioclusters
+inner join bibliotags where biblioclusters.ID=bibliotags.paper and tag=\"history\" order by annoarti desc";
 
 $result = mysql_query($query) or die("Query failed");
 
@@ -32,7 +28,7 @@ $result = mysql_query($query) or die("Query failed");
 
 print "<table border=5>\n";
 
-print "\t<tr align=center>\n";
+print "\t<tr align=center bgcolor=\"#CC9933\">\n";
 print "\t\t<td><b>Author(s)</b></td>\n";
 print "\t\t<td><b>Title</b></td>\n";
 print "\t\t<td><b>Journal</b></td>\n";
@@ -46,18 +42,21 @@ while ($line = mysql_fetch_array($result))
 
 print "\t<tr>\n";
 
+// Authors
 echo "\t<td>\n";
 echo $line[0];
 echo  "</td>\n";
 
-print "\t<td>\n";
-print "<a href=\"".$line[4]."\">".$line[1]."</a>";
-print "\t</td>\n";
+// Title (with link)
 
+print "\t\t<td>".'<a href="article.php?idart='.$line[4].'">'.$line[1]."</td>\n";
+
+// Journal
 print "\t<td>\n";
 print $line[2];
 print "\t</td>\n";
- 
+
+// Year
 print "\t<td align=\"center\">\n";
 print $line[3];
 print "\t</td>\n";
