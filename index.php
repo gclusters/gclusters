@@ -135,7 +135,7 @@ Harris, W.E. 1996, AJ, 112, 1487</a>,
 <tr><td bgcolor="#EED1C1" align="center"><i>
 <b>
 GGCs system:
-</b> <a href="linksmw.php">news</a> | <a href="bibliomain.php">bibliography</a>
+</b> <a href="linksmw.php">news</a> | <a href="history.php">bibliography</a>
 <!--
  | <a href="adsbibliogc.html">ADS search</a>
 -->
