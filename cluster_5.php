@@ -37,6 +37,8 @@ $row = mysql_fetch_row($result);
 
 // **** Caso in cui non trovo alcuna corrispondenza ****
 
+$aa = mysql_fetch_row()
+
 if (!$numres) {
 
 echo 'GGCs database: no clusters selected';
@@ -431,7 +433,7 @@ if($fp_gif) {
    echo '<img src='.$ggc_gif.'>';
    } else {
 
-// estensione già  inclusa...
+// estensione giï¿½ inclusa...
 if($fp_new) {
    echo '<img src='.$ggc_new.'>';
    } else {

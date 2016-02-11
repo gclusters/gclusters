@@ -126,6 +126,11 @@ $qnewpar = "SELECT * FROM newpar WHERE cluster = '$row[0]'";
 $mnewpar = mysql_query($qnewpar) or die ("Problems with queries in table newpar");
 $rnewpar = mysql_num_rows($mnewpar);
 
+// INTERROGAZIONE TABELLA LOCALFILES
+$queryloc = "SELECT * FROM localfiles WHERE cluster='$row[0]'";
+$cercaloc = mysql_query($queryloc) or die ("Problems with queries in table localfiles");
+$rowloc = mysql_fetch_row($cercaloc);
+$numerloc = mysql_num_rows($cercaloc);
 
 // ESTRAGGO l'articolo per il plot del CMD:
 // il piu' recente articolo nel database che abbia il campo CMD non vuoto
@@ -788,7 +793,23 @@ echo ' :: <a href="https://docs.google.com/spreadsheet/viewform?formkey=dDgtNDRw
 
 echo "</td><tr>";
 
+// SOUNDCLUSTERS 
+
+if ($numerloc){
+echo '<tr><td><img src="new_anim.gif">Listen to <i>the sound</i> of this cluster (<a href="soundclusters.php">info</a>)<br>';
+$sourcesound="SoundClusters"."/$rowloc[3]";
+//echo "$rowloc[3]"."<br>";
+// echo "$sourcesound";
+echo '<audio controls>';
+//echo '<source src="SoundClusters/NGC0104.wav" type="audio/wav">';
+echo "<source src=\"$sourcesound\" type=\"audio/wav\">";
+echo 'Your browser does not support the audio element.';
+echo '</audio>';
+// echo "$numerloc"; 
+// echo ' items </td></tr>';
+}
 ?>
+<p>
 
 <!-- DISPLAYING TUTORS -->
 <tr><td><b>Tutor(s)</b> for this cluster:
