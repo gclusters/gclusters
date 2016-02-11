@@ -37,7 +37,8 @@ $row = mysql_fetch_row($result);
 
 // **** Caso in cui non trovo alcuna corrispondenza ****
 
-$aa = mysql_fetch_row()
+// $aa = mysql_fetch_row()
+
 
 if (!$numres) {
 
@@ -60,8 +61,10 @@ include 'coda.html';
 echo '</body></html>';
 exit;
 }
+ 
 
-// **** Caso in cui trovo piu' di una corrispondenza ****
+
+ // **** Caso in cui trovo piu' di una corrispondenza ****
 
 if ($numres > 1) {
 
