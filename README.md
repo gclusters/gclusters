@@ -1,13 +1,10 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
 * Files for the application "gclusters", a galactic globular clusters database
 * Version 11.12 "Hergest Ridge"
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
+*
 ### How do I get set up? ###
 
 * Summary of set up
