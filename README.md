@@ -11,5 +11,4 @@
 * Create an empty database
 * Load the skeleton of the tables in your database (file "SQL/db_template.sql")
 * Set up your database configuration (edit "conn-sample.php" and save as "conn.php")
-* Set up your email (file "admin/testmail.php")
 * Popolate the database
