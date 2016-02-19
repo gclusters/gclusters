@@ -7,20 +7,9 @@
 *
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Download the files in a directory in your web server
+* Create an empty database
+* Load the skeleton of the tables in your database (file "SQL/db_template.sql")
+* Set up your database configuration (edit "conn-sample.php" and save as "conn.php")
+* Set up your email (file "admin/testmail.php")
+* Popolate the database
