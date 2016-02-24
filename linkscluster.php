@@ -104,27 +104,9 @@ while ($line = mysql_fetch_row($result)) {
 
 mysql_close($link);
 
-if($vallink<$res_1)
-{
-
-    // sending a message to the admin
-    /*
-    $to = 'm.castellani@gmail.com';
-    $subject = 'gclusters: broken link';
-    $message = 'Hello! You may want to know that there are broken links in '
-        .$message=$line[0];
-    $message = wordwrap($message, 70);
-
-    mail($to, $subject, $message);
-    */
-}
-
 ?>
 
 <p>
-<table><tr bgcolor="yellow"><td>
-<a href="admin/addlink.php">Submit a link</a> for this cluster.
-</tr></td></table>
 
 <?php include 'coda.html'; ?>
 </body>
