@@ -1,5 +1,5 @@
 <?
-// PLEASE EDIT AND SAVE AS "conn.php"
+// PLEASE EDIT AND RENAME AS "conn.php"
 // In this file you should put your info for database connection
 
 // Please change as follow:
