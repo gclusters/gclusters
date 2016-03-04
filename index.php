@@ -41,13 +41,14 @@ $querylink2 = "SELECT * FROM accesscount ORDER BY n_vis DESC LIMIT 7";
 $res_visited = mysql_query($querylink2) or die("Query D failed");
 
 // selecting a random cluster
-$a=rand(0,154);
+
+$a=rand(0,4); // CHANGE! Insert here the total number of clusters
 $scelgo = "SELECT ID FROM parameters LIMIT $a,1";
 $resultr = mysql_query($scelgo) or die ("Query E failed");
 $randglob = mysql_fetch_row($resultr);
 
 // selecting the "cluster of the day"
-$numax=154;
+$numax=4; // CHANGE! Insert here the total number of clusters
 $cldate=date('z')-70;
 //$cldate2=($cldate % $numax); 
 $cldate2=abs($cldate % $numax); // patch for the year 2012...
@@ -268,6 +269,7 @@ A brief description of parameters listed in Tables 1,2,3</a>
 
 
 <!--  Table PREPRINTS  -->
+// CHANGE! Put here any resource that you like
 <table border=6 width=100%><tr>
 <td bgcolor="#FFCC99" align="center" width=100%><i><b>
 <a href="http://www.citeulike.org/group/6906">Stellar Clusters group</a></b>
@@ -285,7 +287,7 @@ A brief description of parameters listed in Tables 1,2,3</a>
 
 
 <!-- Table WHAT IS NEW -->
-
+<!-- CHANGE! Put here any resource that you like -->
 <table border=6 width=100%>
 <tr><td bgcolor="#EED1C1" align="center"><i><b>
 <a href="http://globularnews.tumblr.com/">
@@ -323,7 +325,7 @@ Related <a href="papers">papers and contributions</a>
 </table>
 
 <!-- Table FEEDBACK -->
-
+<!-- CHANGE! Put below your preferred resources -->
 <table border=6 width=100%>
 <tr><td bgcolor="#EED1C1" align="center"><i><b>
 Users feedback</b></i>
@@ -520,6 +522,7 @@ Project</a>
 </td></tr>
 
 <!-- SOCIAL NETWORKS -->
+<!-- CHANGE! Put below your preferred resources -->
 <tr><td align="center"><i>Find us on...</i>
 <a href="http://www.facebook.com/pages/gclusters/123871424321591">Facebook</a>
 <a href="http://globularclusters.wordpress.com">Wordpress</a>

@@ -1,8 +1,6 @@
 <?php
-$link = mysql_connect("localhost", "root", "root"); 
-//mysql_select_db("globularclusters");
+
 include 'conn.php';
-// header("location: http://www.eso.org");
 
  // define queries ...
 

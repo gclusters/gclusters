@@ -11,5 +11,7 @@
 $link = mysql_connect("host", "user", "password"); 
 mysql_select_db("db_name");
 
+$email_me = m.castellani@gmail.com;
+
 ?>
 

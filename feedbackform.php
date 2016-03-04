@@ -9,7 +9,7 @@
  
 <p>
 <center>
-
+<!-- CHANGE! Put here any resource that you like -->
 <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGZLNjhsWEFaUmVuMXhhMWdhN1pUZFE6MQ" width="770" height="670" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
 </center>
