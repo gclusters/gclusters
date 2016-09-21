@@ -48,7 +48,7 @@ if($numres==0)
 while ($line = mysql_fetch_row($result)) {
 $iiref++;
 
-$ggc_cmd="ima/".$line[7];
+$ggc_cmd="static/ima/".$line[7];
 
 $query_names = "SELECT tag FROM bibliotags WHERE paper = '$line[4]'";
 $res_names = mysql_query($query_names) or die ("query_names failed");
@@ -144,7 +144,7 @@ echo "</td></tr>\n";
 
 // Finding the file with the CMD ...
 
-        $ggc_cmd_new="ima/".$line[7];
+        $ggc_cmd_new="static/ima/".$line[7];
         $ggc_cmd_png=$ggc_cmd_new.'.png';
         $ggc_cmd_gif=$ggc_cmd_new.'.gif';
         $ggc_cmd_jpg=$ggc_cmd_new.'.jpg';

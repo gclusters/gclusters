@@ -91,7 +91,7 @@ if ($fpweb) {
 // Individuo il nome corretto per il file con il CMD...
 // $line[7] è "cmdiagrams" in "bibliocusters"
 
-    $ggc_cmd_new="ima/".$line[7];		// associo il path
+    $ggc_cmd_new="static/ima/".$line[7];		// associo il path
     $ggc_cmd_png=$ggc_cmd_new.'.png';	// estensione png
     $ggc_cmd_gif=$ggc_cmd_new.'.gif';	// estensione gif
     $ggc_cmd_jpg=$ggc_cmd_new.'.jpg';	// estensione jpg

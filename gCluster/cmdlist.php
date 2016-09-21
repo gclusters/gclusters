@@ -187,7 +187,7 @@ if($fpweb){
    echo '<img src='.$ggc_image.' width=500>';
    } else {
 // Se il link esterno non va, passo a cercare nel filesystem locale
-$ggcpre="ima/";
+$ggcpre="static/ima/";
 
 // apro l'immagine così com'e' prima di tutto...
 

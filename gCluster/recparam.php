@@ -87,7 +87,7 @@ mysql_close($link);
 <p><br>
 
 <blockquote>
-<img src="graph/redball.gif">
+<img src="static/graph/redball.gif">
 <i>NOTE: the availability of multiple values of certain parameters (besides the standard Harris' value)
 for a given globular cluster is indicated by the presence 
 of a little red point near the parameter's name in the corresponding cluster page

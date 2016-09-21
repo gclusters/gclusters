@@ -48,7 +48,7 @@ $query_names = "SELECT tag FROM bibliotags WHERE paper = '$line[4]'";
 $res_names = mysql_query($query_names) or die ("query_names failed");
 $num_paper= mysql_num_rows($res_names);
 
-$ggc_cmd="ima/".$line[7];
+$ggc_cmd="static/ima/".$line[7];
 
 ?>
 

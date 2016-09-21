@@ -94,7 +94,7 @@ if ($fpweb) {
 // Settore B1 ...
 // Individuo il nome corretto per il file con il CMD...
 
-$ggc_cmd_new="ima/".$line[7];
+$ggc_cmd_new="static/ima/".$line[7];
 $ggc_cmd_png=$ggc_cmd_new.'.png';
 $ggc_cmd_gif=$ggc_cmd_new.'.gif';
 $ggc_cmd_jpg=$ggc_cmd_new.'.jpg';

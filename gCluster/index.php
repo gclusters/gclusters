@@ -8,7 +8,7 @@
 <body background="static/images/backgr2.jpg" text="#000000" vlink="#330099" -->
 <center>
 <img src="static/images/globular_1.gif"><br>
-<img src="static/images/sglobular_2.gif"><p>
+<img src="static/images/globular_2.gif"><p>
 
 <i>Release 11.12 
 "<a href="http://en.wikipedia.org/wiki/Hergest_Ridge_(album)">
@@ -518,7 +518,7 @@ Astronomy and Space Sites</a>, from <i>Best Education Sites</i>
 Globular Clusters section</a>
 in the <a href="http://dmoz.org">Open Directory
 Project</a>
-<img src="lizard2b.gif" width="70">
+<img src="static/images/lizard2b.gif" width="70">
 </td></tr>
 
 <!-- SOCIAL NETWORKS -->

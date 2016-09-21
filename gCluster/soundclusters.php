@@ -20,7 +20,7 @@ The procedure adopted run as following. We crossed each cluster along the X coor
 </p><p>
 Note that, in the presented realization, only the most luminous 3000 stars are taken into account.
 </p>
-<img src="graph/audio.jpg"	>
+<img src="static/graph/audio.jpg"	>
 <p>
 
 In crossing a given cluster, each star generates a sound (detailed as follow), different for each channel. 

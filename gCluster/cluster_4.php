@@ -285,7 +285,7 @@ $r_npsel = mysql_num_rows($q_npsel);
 
 if  ($r_npsel)
   {
-   echo "<img src=\"graph/redball.gif\">";
+   echo "<img src=\"static/graph/redball.gif\">";
   }
 
 }
@@ -418,7 +418,7 @@ $ggc_image=$row[38];		// campo "linkimage" di "parameters"
 if($fpweb){
    echo '<img src='.$ggc_image.' width=500>';
    	} else {
-   $ggcpre="ima/"; // cartella immagini in locale
+   $ggcpre="static/ima/"; // cartella immagini in locale
 
 $ggc_new=$ggcpre.$ggc_temp;				// nothing to add
 $ggc_image=$ggcpre.$ggc_temp.".jpg";	// adding jpg
@@ -464,9 +464,9 @@ echo "</tr>\n";
 
 // se presenti, uso le immagini sulla macchina in locale...
 
-$ggc_dss="ima/dss_".$ggc_temp.".gif";
-$ggc_dss_jpg="ima/dss_".$ggc_temp.".jpg";
-$ggc_dss_simple="ima/dss_".$ggc_temp;
+$ggc_dss="static/ima/dss_".$ggc_temp.".gif";
+$ggc_dss_jpg="static/ima/dss_".$ggc_temp.".jpg";
+$ggc_dss_simple="static/ima/dss_".$ggc_temp;
 
 // definisco i parametri per scaricare direttamente da DSS...
 
@@ -707,7 +707,7 @@ if ($lres_2==1) {
 
 echo "</td></tr>";
 echo "<tr><td align=center BGCOLOR=\"#99CCFF\"><b><font size=\"+1\">Selected biblio </font></b>";
-echo '<img src="ima/other/stack_of_books.png" align=ABSMIDDLE width=60>'."</td></tr>";
+echo '<img src="static/ima/other/stack_of_books.png" align=ABSMIDDLE width=60>'."</td></tr>";
 
 $iiref=0;
 

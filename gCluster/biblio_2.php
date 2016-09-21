@@ -66,13 +66,13 @@ include 'columns.php';
 <center>
 <table>
 <tr><td>
-<img src="ima/other/stack_of_books.png">
+<img src="static/ima/other/stack_of_books.png">
 </td><td>
 <b>
 <font size="+2" color="grey"><i> Selected bibliography </i></font>	</b>
 </td>
 <td>
-<img src="ima/other/stack_of_books.png">
+<img src="static/ima/other/stack_of_books.png">
 </td>
 
 </tr></table>
@@ -98,7 +98,7 @@ $res_names = mysql_query($query_names) or die ("query_names failed");
 $num_paper= mysql_num_rows($res_names);
 //  fine blocco tags
 
-$ggc_cmd="ima/".$line[7]; // locazione del file del CMD nel filesystem
+$ggc_cmd="static/ima/".$line[7]; // locazione del file del CMD nel filesystem
 ?>
 
 <!-- print results on a table -->
@@ -155,7 +155,7 @@ if ($line[7]!="")
 
 // Finding the file with the CMD ...
 
-$ggc_cmd_new="ima/".$line[7];
+$ggc_cmd_new="static/ima/".$line[7];
 $ggc_cmd_png=$ggc_cmd_new.'.png';
 $ggc_cmd_gif=$ggc_cmd_new.'.gif';
 $ggc_cmd_jpg=$ggc_cmd_new.'.jpg';

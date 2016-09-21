@@ -48,7 +48,7 @@ $iiref=0;
 while ($line = mysql_fetch_row($result)) {
 $iiref++;
 
-$ggc_cmd="ima/".$line[7];
+$ggc_cmd="static/ima/".$line[7];
 
 
 $query_names = "SELECT tag FROM bibliotags WHERE paper = '$line[4]'";
